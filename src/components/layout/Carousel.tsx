@@ -1,4 +1,4 @@
-import { Themeable, Alignable, TextAlignments } from "@/types/cms";
+import { Themeable, Alignable, TextAlignments, Stylable } from "@/types/cms";
 import Slider from "react-slick";
 import React, { ReactNode } from "react";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 type NavStyle = "arrows" | "dots" | "both" | "none";
 
-interface CarouselProps extends Themeable, Alignable {
+interface CarouselProps extends Themeable, Alignable, Stylable {
   headline?: string;
   headlineLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   description?: string;
@@ -53,6 +53,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   rowSize = 3,
   navStyle = "arrows",
   children,
+  className,
 }) => {
   const Headline = headlineLevel;
 
@@ -131,7 +132,7 @@ export const Carousel: React.FC<CarouselProps> = ({
 
   return (
     <ThemeProvider theme={theme} inheritTheme={inheritTheme} className="component-section w-full py-8">
-      <div className="container mx-auto px-4">
+      <section className={`container mx-auto px-4 ${className}`}>
         <div className={`${alignmentClasses[alignment]} mb-8`}>
           {headline && <Headline className="mb-4 font-bold text-theme-heading">{headline}</Headline>}
           {description && <p className="mb-6 text-theme-text">{description}</p>}
@@ -154,7 +155,7 @@ export const Carousel: React.FC<CarouselProps> = ({
             )}
           </Slider>
         </div>
-      </div>
+      </section>
     </ThemeProvider>
   );
 };

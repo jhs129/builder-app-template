@@ -1,9 +1,9 @@
 import { BuilderBlocks, type BuilderElement } from "@builder.io/react";
-import { Themeable, Alignable, TextAlignments, Opaque } from "@/types";
+import { Themeable, Alignable, TextAlignments, Opaque, Stylable } from "@/types";
 import { ReactNode, useMemo } from "react";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 
-interface Banner100Props extends Themeable, Alignable, Opaque {
+interface Banner100Props extends Themeable, Alignable, Opaque, Stylable {
   content?: { blocks: BuilderElement[] };
   builderBlock?: BuilderElement;
   backgroundType?: "none" | "image" | "video" | "youtube";
@@ -33,6 +33,7 @@ const Banner100: React.FC<Banner100Props> = ({
   alignment = "center",
   theme = "light",
   inheritTheme = false,
+  className,
 }) => {
 
   // Helper function to extract URL from Builder.io file object or string
@@ -87,7 +88,7 @@ const Banner100: React.FC<Banner100Props> = ({
 
   const bannerContent = (
     <section
-      className={`component-section flex flex-col w-full ${heightClasses} justify-center items-start ${themeOverlayClass} relative`}
+      className={`component-section ${className} flex flex-col w-full ${heightClasses} justify-center items-start ${themeOverlayClass} relative`}
       style={{ ...backgroundStyle, ...themeOverlayStyle }}
     >
       {/* Render video background if backgroundType is video */}

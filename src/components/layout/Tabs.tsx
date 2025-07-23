@@ -1,7 +1,6 @@
 import { BuilderBlocks, type BuilderElement } from "@builder.io/react";
 import { useState } from "react";
-import { Themeable, getThemeClasses } from "@/types/design-kit/themeable";
-import { Heroic } from "@/types/design-kit/heroic";
+import { Themeable, getThemeClasses, Heroic, Stylable } from "@/types";
 
 export interface TabItem {
   headline: string;
@@ -10,18 +9,18 @@ export interface TabItem {
   href?: string;
 }
 
-interface TabsProps extends Themeable, Heroic {
+interface TabsProps extends Themeable, Heroic, Stylable {
   tabs: TabItem[];
   builderBlock?: BuilderElement;
 }
 
-export const Tabs = ({ tabs = [], theme = "light", builderBlock, headline, isHero = false }: TabsProps) => {
+export const Tabs = ({ tabs = [], theme = "light", builderBlock, headline, isHero = false, className }: TabsProps) => {
   const [activeTab, setActiveTab] = useState<number>(0);
   const TitleTag = isHero ? "h1" : "h2";
 
   if (!tabs || tabs.length === 0) {
     return (
-      <div className={`tabs w-full ${getThemeClasses(theme)}`}>
+      <section className={`tabs w-full ${getThemeClasses(theme)}`}>
         <div className="container mx-auto py-8 lead">
           {headline && (
             <TitleTag>
@@ -32,12 +31,12 @@ export const Tabs = ({ tabs = [], theme = "light", builderBlock, headline, isHer
             No tabs configured. Please add tabs in the Builder.io editor.
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 
   return (
-    <div className={`tabs w-full ${getThemeClasses(theme)}`}>
+    <section className={`tabs w-full ${getThemeClasses(theme)} ${className}`}>
       <div className="container mx-auto py-8">
         {headline && (
           <TitleTag>
@@ -100,7 +99,7 @@ export const Tabs = ({ tabs = [], theme = "light", builderBlock, headline, isHer
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
