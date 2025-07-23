@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import Banner50 from '@/components/sections/Banner50';
+import Banner75 from '@/components/layout/Banner75';
 
 const meta = {
-  title: 'Sections/Banner50',
-  component: Banner50,
+  title: 'Layout/Banner75',
+  component: Banner75,
   parameters: {
     layout: 'fullscreen',
   },
@@ -54,7 +54,7 @@ const meta = {
       description: 'Whether to inherit theme from parent',
     },
   },
-} satisfies Meta<typeof Banner50>;
+} satisfies Meta<typeof Banner75>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

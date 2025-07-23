@@ -38,38 +38,17 @@ Builder.register("insertMenu", {
   ],
 });
 
-Builder.register("insertMenu", {
-  name: "Commerce",
-  items: [
-    { name: "CollectionTile" },
-    { name: "ProductCard" },
-    { name: "ProductGrid" },
-  ],
-});
 
 Builder.register("insertMenu", {
-  name: "Sections",
+  name: "Layout",
   items: [
     { name: "Core:Section" },
     { name: "Banner100" },
     { name: "Banner75" },
     { name: "Banner50" },
     { name: "Carousel" },
-    { name: "HeroBanner" },
-    { name: "InstructorHero" },
-    { name: "InstructorBio" },
-    { name: "MediaMentions" },
-    { name: "StatsCounter" },
-    { name: "CollectionHero" },
-    { name: "TileHero" },
     { name: "Tabs" },
  
   ],
 });
 
-Builder.register("insertMenu", {
-  name: "SEO",
-  items: [
-    { name: "EventSchemaData" },
-  ],
-});

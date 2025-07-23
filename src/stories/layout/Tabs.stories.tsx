@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Tabs } from "@/components/sections/Tabs";
+import { Tabs } from "@/components/layout/Tabs";
 import { standardThemes } from "@/types/design-kit/themeable";
 
 const meta: Meta<typeof Tabs> = {
-  title: "Sections/Tabs",
+  title: "Layout/Tabs",
   component: Tabs,
   parameters: {
     layout: "fullscreen",
@@ -186,7 +186,7 @@ export const AsMainHeading: Story = {
       },
       {
         headline: "Advanced",
-        type: "content", 
+        type: "content",
         content: {
           blocks: [],
         },

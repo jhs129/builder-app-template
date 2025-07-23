@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Carousel } from '@/components/sections/Carousel';
+import { Carousel } from '@/components/layout/Carousel';
 
 const meta = {
-  title: 'Sections/Carousel',
+  title: 'Layout/Carousel',
   component: Carousel,
   parameters: {
     layout: 'padded',

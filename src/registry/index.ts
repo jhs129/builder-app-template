@@ -5,5 +5,5 @@ import "@/builder-design-tokens";
 import "./navigation";
 import "./ui";
 import "./cta";
-import "./sections";
+import "./layout";
 import "./seo";

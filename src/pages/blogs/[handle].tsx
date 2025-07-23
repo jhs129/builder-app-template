@@ -8,7 +8,7 @@ import {
 import "../../builder-registry";
 import DefaultHeader from "@/components/navigation/DefaultHeader";
 import DefaultFooter from "@/components/navigation/DefaultFooter";
-import Banner100 from "@/components/sections/Banner100";
+import Banner100 from "@/components/layout/Banner100";
 import PageSEOHead from "@/components/seo/PageSEOHead";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Custom404 from "../404";
