@@ -1,4 +1,4 @@
-import { Builder, withChildren } from "@builder.io/react";
+import { Builder } from "@builder.io/react";
 import dynamic from "next/dynamic";
 import { commonInputs, standardThemes, themeableInputs } from "@/types";
 
@@ -153,80 +153,6 @@ Builder.registerComponent(
     defaultStyles: {
       marginTop: "20px",
       marginBottom: "20px",
-    },
-  }
-);
-
-// Image Testimonial
-Builder.registerComponent(
-  withChildren(dynamic(() => import("@/components/ui/ImageTestimonial"))),
-  {
-    name: "ImageTestimonial",
-    friendlyName: "Image Testimonial",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
-    inputs: [
-      ...themeableInputs,
-      {
-        name: "eyebrow",
-        type: "string",
-        defaultValue: "REAL RESULTS",
-        helperText: "Optional text above the image",
-      },
-      {
-        name: "image",
-        type: "file",
-        allowedFileTypes: ["jpeg", "jpg", "png", "webp", "avif"],
-        required: false,
-        defaultValue: "https://placehold.co/400x500/e5e7eb/6b7280.png?text=Testimonial+Image",
-        helperText: "Testimonial image",
-      },
-      {
-        name: "name",
-        type: "string",
-        required: true,
-        defaultValue: "Lauren",
-        helperText: "Person's name (uses font-accent)",
-      },
-      {
-        name: "title",
-        type: "string",
-        required: true,
-        defaultValue: "GOT HER GROOVE BACK",
-        helperText: "Title displayed in uppercase next to name",
-      },
-      {
-        name: "quote",
-        type: "longText",
-        required: true,
-        defaultValue: "This program has completely transformed my life. I've never felt more confident and focused.",
-        helperText: "Testimonial quote displayed in blockquote",
-      },
-
-      {
-        name: "maskOpacity",
-        type: "number",
-        defaultValue: 0.3,
-        min: 0,
-        max: 1,
-        step: 0.1,
-        helperText: "Opacity of the overlay mask (0-1)",
-      },
-      {
-        name: "className",
-        type: "string",
-        required: false,
-        helperText: "Advanced field for additional CSS classes",
-      },
-    ],
-    childRequirements: {
-      message: "You can add Text and Button components as children",
-      query: {
-        "component.name": { $in: ["Text", "Button"] },
-      },
-    },
-    defaultStyles: {
-      display: "block",
-      minWidth: "384px",
     },
   }
 );

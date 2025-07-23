@@ -19,7 +19,6 @@ Builder.register("editor.settings", {
       { name: "Bright Cyan", value: "var(--accent-cyan, #5ce1e6)" },
       { name: "Sky Blue", value: "var(--accent-teal, #0dcaf0)" },
       { name: "Light Purple", value: "var(--accent-light-purple, #8c52ff)" },
-      { name: "Silva Blue", value: "var(--accent-silva-blue, #3B82F6)" },
     ],
     fontFamily: [
       {
