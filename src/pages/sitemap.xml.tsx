@@ -1,6 +1,5 @@
 import type { GetServerSideProps } from "next";
 import { builder } from "@builder.io/react";
-import { getCollectionByHandle } from "@/lib/shopify";
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   if (!res) {
@@ -8,12 +7,16 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   }
 
   // Add cache headers for better performance
-  res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
+  res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=86400");
+
+  // Parse excluded paths from environment variable
+  const excludedPaths = process.env.SITEMAP_EXCLUDED_PATHS
+    ? process.env.SITEMAP_EXCLUDED_PATHS.split(",").map((path) => path.trim())
+    : ["/do-not-publish/"]; // Default fallback
 
   const locale = "en_US";
   let pages: any[] = [];
   let posts: any[] = [];
-  let collections: any[] = [];
 
   try {
     // Get data from all sources in parallel with error handling
@@ -30,82 +33,43 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         fields: "data.handle,lastUpdated",
         options: { noTargeting: true },
       }),
-      // Get collection models from Builder.io
-      builder.getAll("collection", {
-        locale: locale,
-        fields: "data.handle,lastUpdated",
-        options: { noTargeting: true },
-      }),
     ]);
 
     // Extract results, using empty arrays as fallbacks
-    pages = results[0].status === 'fulfilled' ? results[0].value || [] : [];
-    posts = results[1].status === 'fulfilled' ? results[1].value || [] : [];
-    collections = results[2].status === 'fulfilled' ? results[2].value || [] : [];
+    pages = results[0].status === "fulfilled" ? results[0].value || [] : [];
+    posts = results[1].status === "fulfilled" ? results[1].value || [] : [];
 
     // Log any failures for debugging
     results.forEach((result, index) => {
-      if (result.status === 'rejected') {
-        const sources = ['Builder.io pages', 'Builder.io articles', 'Builder.io collections'];
+      if (result.status === "rejected") {
+        const sources = [
+          "Builder.io pages",
+          "Builder.io articles",
+          "Builder.io collections",
+        ];
         console.error(`Failed to fetch ${sources[index]}:`, result.reason);
       }
     });
   } catch (error) {
-    console.error('Unexpected error in sitemap generation:', error);
+    console.error("Unexpected error in sitemap generation:", error);
     // Continue with empty arrays - better to have a partial sitemap than none
   }
 
-  // Fetch Shopify collection data and extract products with their dates
-  const allProducts: Array<{ handle: string; updatedAt?: string; publishedAt?: string }> = [];
-  const collectionHandles: string[] = [];
+  // Helper function to check if a path should be excluded
+  const shouldExcludePath = (path: string): boolean => {
+    return excludedPaths.some((excludedPath) => path.includes(excludedPath));
+  };
 
-  try {
-    // Get Shopify collections and their products
-    const collectionPromises = collections
-      .filter((collection) => collection?.data?.handle)
-      .map(async (collection) => {
-        try {
-          const shopifyCollection = await getCollectionByHandle(collection.data.handle);
-          return {
-            handle: collection.data.handle,
-            products: shopifyCollection?.products?.edges || [],
-          };
-        } catch (error) {
-          console.error(`Failed to fetch Shopify collection ${collection.data.handle}:`, error);
-          return { handle: collection.data.handle, products: [] };
-        }
-      });
-
-    const collectionResults = await Promise.allSettled(collectionPromises);
-    
-    collectionResults.forEach((result) => {
-      if (result.status === 'fulfilled') {
-        // Add collection handle
-        collectionHandles.push(result.value.handle);
-        
-        // Extract product data (handle + dates) from collection
-        result.value.products.forEach((productEdge: any) => {
-          const product = productEdge?.node;
-          const productHandle = product?.handle;
-          if (productHandle && !allProducts.some(p => p.handle === productHandle)) {
-            allProducts.push({
-              handle: productHandle,
-              updatedAt: product?.updatedAt,
-              publishedAt: product?.publishedAt,
-            });
-          }
-        });
-      }
-    });
-  } catch (error) {
-    console.error('Error fetching collection data from Shopify:', error);
-  }
-
-  // Combine all URLs and filter out do-not-publish pages and 404
+  // Combine all URLs and filter out excluded pages and 404
   const urls = [
-    // Add pages (excluding do-not-publish and 404) with null checks
+    // Add pages (excluding configured paths and 404) with null checks
     ...(pages || [])
-      .filter((page) => page?.data?.url && !page.data.url.includes('/do-not-publish/') && page.data.url !== '/404')
+      .filter(
+        (page) =>
+          page?.data?.url &&
+          !shouldExcludePath(page.data.url) &&
+          page.data.url !== "/404"
+      )
       .map((page) => ({
         url: page.data.url,
         lastUpdated: new Date(page.lastUpdated || Date.now())
@@ -114,32 +78,16 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       })),
     // Add main blog page
     { url: "blogs", lastUpdated: new Date().toISOString().split("T")[0] },
-    // Add blog posts (excluding do-not-publish and empty handles)
+    // Add blog posts (excluding configured paths and empty handles)
     ...(posts || [])
-      .filter((post) => post?.data?.handle && !post.data.handle.includes('do-not-publish'))
+      .filter(
+        (post) => post?.data?.handle && !shouldExcludePath(post.data.handle)
+      )
       .map((post) => ({
         url: `blogs/${post.data.handle}`,
         lastUpdated: new Date(post.lastUpdated || Date.now())
           .toISOString()
           .split("T")[0],
-      })),
-    // Add product pages (from collection products, using Shopify dates)
-    ...(allProducts || [])
-      .filter((product) => product.handle && product.handle.trim().length > 0)
-      .map((product) => {
-        // Use updatedAt if available, fallback to publishedAt, then current date
-        const dateToUse = product.updatedAt || product.publishedAt || new Date().toISOString();
-        return {
-          url: `products/${product.handle}`,
-          lastUpdated: new Date(dateToUse).toISOString().split("T")[0],
-        };
-      }),
-    // Add collection pages (from Builder.io collections, filter out empty handles)
-    ...(collectionHandles || [])
-      .filter((handle) => handle && handle.trim().length > 0)
-      .map((handle) => ({
-        url: `collections/${handle}`,
-        lastUpdated: new Date().toISOString().split("T")[0],
       })),
   ];
 

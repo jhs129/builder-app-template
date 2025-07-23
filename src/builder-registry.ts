@@ -1,6 +1,5 @@
 import { Builder } from "@builder.io/react";
 import "./registry";
-import "./registry/commerce";
 import "./registry/seo";
 import "./builder-design-tokens";
 

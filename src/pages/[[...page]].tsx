@@ -16,7 +16,7 @@ interface PageProps {
 }
 
 // Directories that have their own page implementations
-const EXCLUDED_DIRECTORIES = ["/collections", "/products", "/blogs"];
+const EXCLUDED_DIRECTORIES = ["/blogs"];
 
 // Pages that have their own implementations
 const STANDALONE_PAGES = ["/404"];
