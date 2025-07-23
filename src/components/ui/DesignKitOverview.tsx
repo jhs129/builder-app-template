@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import Image from "next/image";
 import { Themeable, Theme, standardThemes } from "@/types";
 import Button from "./Button";
-import Banner100 from "../sections/Banner100";
+import Banner100 from "../layout/Banner100";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import tailwindConfig from "../../../tailwind.config.js";
 
@@ -13,7 +13,7 @@ interface DesignKitOverviewProps extends Themeable {
 interface ThemeColor {
   name: string;
   title: string;
-  category: 'primary' | 'accent';
+  category: "primary" | "accent";
   value?: string;
 }
 
@@ -35,23 +35,23 @@ const extractColorsFromConfig = (): ThemeColor[] => {
 
   Object.keys(colors).forEach((colorKey) => {
     // Skip theme-aware colors as they are not static color swatches
-    if (colorKey.startsWith('theme-')) {
+    if (colorKey.startsWith("theme-")) {
       return;
     }
 
     // Determine category based on color name patterns
-    let category: ThemeColor['category'] = 'accent';
-    
-    if (colorKey.includes('primary') || colorKey.includes('secondary')) {
-      category = 'primary';
+    let category: ThemeColor["category"] = "accent";
+
+    if (colorKey.includes("primary") || colorKey.includes("secondary")) {
+      category = "primary";
     }
     // All other colors (including silva-blue) are accent colors
 
     // Generate friendly title from color key
     const title = colorKey
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
 
     // Extract the actual color value
     const colorDefinition = colors[colorKey as keyof typeof colors];
@@ -61,7 +61,7 @@ const extractColorsFromConfig = (): ThemeColor[] => {
       name: colorKey,
       title,
       category,
-      value: colorValue
+      value: colorValue,
     });
   });
 
@@ -69,20 +69,22 @@ const extractColorsFromConfig = (): ThemeColor[] => {
 };
 
 // Get colors by category
-const getColorsByCategory = (category: ThemeColor['category'], colors: ThemeColor[]) => 
-  colors.filter(color => color.category === category);
+const getColorsByCategory = (
+  category: ThemeColor["category"],
+  colors: ThemeColor[]
+) => colors.filter((color) => color.category === category);
 
 // Determine text color based on background color
 const getTextColorForBackground = (colorName: string): string => {
   // Light colors get dark text
-  const lightColors = ['primary-light', 'secondary-light'];
-  
+  const lightColors = ["primary-light", "secondary-light"];
+
   if (lightColors.includes(colorName)) {
-    return 'text-primary-dark';
+    return "text-primary-dark";
   }
-  
+
   // All other colors (dark and accent colors) get light text
-  return 'text-primary-light';
+  return "text-primary-light";
 };
 
 // Individual Color Swatch Component
@@ -98,14 +100,14 @@ const ColorSwatch: FC<ColorSwatchProps> = ({ color, opacity }) => {
         className={`w-full h-12 bg-${color.name} shadow-lg rounded-lg mb-2 flex items-center justify-center`}
         style={{ opacity: opacity / 100 }}
       >
-        <span className={`text-xs font-medium ${getTextColorForBackground(color.name)}`}>
+        <span
+          className={`text-xs font-medium ${getTextColorForBackground(color.name)}`}
+        >
           {color.title}
         </span>
       </div>
       {color.value && (
-        <div className="text-xs text-theme-text-muted mt-1">
-          {color.value}
-        </div>
+        <div className="text-xs text-theme-text-muted mt-1">{color.value}</div>
       )}
     </div>
   );
@@ -119,11 +121,11 @@ interface ColorSectionProps {
   gridCols?: string;
 }
 
-const ColorSection: FC<ColorSectionProps> = ({ 
-  title, 
-  colors, 
+const ColorSection: FC<ColorSectionProps> = ({
+  title,
+  colors,
   opacity,
-  gridCols = "grid-cols-2 md:grid-cols-4 lg:grid-cols-6" 
+  gridCols = "grid-cols-2 md:grid-cols-4 lg:grid-cols-6",
 }) => {
   return (
     <div className="mb-8">
@@ -145,10 +147,11 @@ const DesignKitOverview: FC<DesignKitOverviewProps> = ({
   const [currentTheme, setCurrentTheme] = useState<Theme>(theme);
   const [opacity, setOpacity] = useState<number>(40);
   const [showBackgroundImage, setShowBackgroundImage] = useState<boolean>(true);
-  
+
   // Check if current theme is a transparent theme
-  const isTransparentTheme = currentTheme === 'transparent-light' || currentTheme === 'transparent-dark';
-  
+  const isTransparentTheme =
+    currentTheme === "transparent-light" || currentTheme === "transparent-dark";
+
   // Extract colors dynamically from tailwind config
   const themeColors = extractColorsFromConfig();
 
@@ -161,12 +164,17 @@ const DesignKitOverview: FC<DesignKitOverviewProps> = ({
         >
           <div>
             <h1>Design Kit Overview</h1>
-            <p className="text-theme-text-muted">A comprehensive view of all design elements and components</p>
+            <p className="text-theme-text-muted">
+              A comprehensive view of all design elements and components
+            </p>
           </div>
 
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <label htmlFor="theme-selector" className="text-sm font-medium text-theme-text">
+              <label
+                htmlFor="theme-selector"
+                className="text-sm font-medium text-theme-text"
+              >
                 Current Theme:
               </label>
               <select
@@ -182,7 +190,7 @@ const DesignKitOverview: FC<DesignKitOverviewProps> = ({
                 ))}
               </select>
             </div>
-            
+
             <div className="flex flex-col gap-2">
               <label className="flex items-center gap-2 text-sm font-medium text-theme-text cursor-pointer">
                 <input
@@ -197,7 +205,10 @@ const DesignKitOverview: FC<DesignKitOverviewProps> = ({
 
             {!isTransparentTheme && showBackgroundImage && (
               <div className="flex flex-col gap-2">
-                <label htmlFor="opacity-slider" className="text-sm font-medium text-theme-text">
+                <label
+                  htmlFor="opacity-slider"
+                  className="text-sm font-medium text-theme-text"
+                >
                   Typography Background Mask Opacity: {opacity}%
                 </label>
                 <input
@@ -215,11 +226,14 @@ const DesignKitOverview: FC<DesignKitOverviewProps> = ({
           </div>
         </div>
 
-
         {/* Typography Section */}
         <Banner100
           backgroundType={showBackgroundImage ? "image" : "none"}
-          backgroundImage={showBackgroundImage ? "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F8b14eeae28114d33a5c8a95006468d3d?width=500&height=500" : undefined}
+          backgroundImage={
+            showBackgroundImage
+              ? "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F8b14eeae28114d33a5c8a95006468d3d?width=500&height=500"
+              : undefined
+          }
           maskOpacity={showBackgroundImage ? opacity / 100 : 0}
           theme={currentTheme}
           alignment="left"
@@ -257,8 +271,8 @@ const DesignKitOverview: FC<DesignKitOverviewProps> = ({
                   <div>
                     <p>
                       This is regular paragraph text that shows how body content
-                      appears with the current theme. It demonstrates line height,
-                      font weight, and color.
+                      appears with the current theme. It demonstrates line
+                      height, font weight, and color.
                     </p>
                   </div>
                   <div>
@@ -269,38 +283,37 @@ const DesignKitOverview: FC<DesignKitOverviewProps> = ({
                   </div>
                   <div>
                     <p>
-                      This text has a handwritten {" "}
-                      <u className="underline-accent">underline</u>{" "}
-                      and shows{" "}
-                      <a href="#">
-                        {" "}
-                        how links appear
-                      </a>
-                      .
+                      This text has a handwritten{" "}
+                      <u className="underline-accent">underline</u> and shows{" "}
+                      <a href="#"> how links appear</a>.
                     </p>
-                    <Button label="Sample Button" inheritTheme={true} href="#" className="mt-4" />
+                    <Button
+                      label="Sample Button"
+                      inheritTheme={true}
+                      href="#"
+                      className="mt-4"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </Banner100>
-                {/* Color Palette */}
-                <section className="mb-12">
+        {/* Color Palette */}
+        <section className="mb-12">
           <h2 className="mb-6 text-theme-heading">Theme Colors</h2>
-          
-          <ColorSection 
-            title="Primary Colors" 
-            colors={getColorsByCategory('primary', themeColors)} 
-            opacity={100}
-          />
-          
-          <ColorSection 
-            title="Accent Colors" 
-            colors={getColorsByCategory('accent', themeColors)} 
+
+          <ColorSection
+            title="Primary Colors"
+            colors={getColorsByCategory("primary", themeColors)}
             opacity={100}
           />
 
+          <ColorSection
+            title="Accent Colors"
+            colors={getColorsByCategory("accent", themeColors)}
+            opacity={100}
+          />
         </section>
 
         {/* Buttons Section */}

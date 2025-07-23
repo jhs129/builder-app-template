@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import Banner100 from "@/components/sections/Banner100";
+import Banner100 from "@/components/layout/Banner100";
 
 const meta: Meta<typeof Banner100> = {
-  title: "Sections/Banner100",
+  title: "Layout/Banner100",
   component: Banner100,
   parameters: {
     layout: "fullscreen",

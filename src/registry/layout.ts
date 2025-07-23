@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 
 // Banner 100
 Builder.registerComponent(
-  dynamic(() => import("@/components/sections/Banner100")),
+  dynamic(() => import("@/components/layout/Banner100")),
   {
     name: "Banner100",
     image:
@@ -76,7 +76,7 @@ Builder.registerComponent(
 
 // Banner 75
 Builder.registerComponent(
-  withChildren(dynamic(() => import("@/components/sections/Banner75"))),
+  withChildren(dynamic(() => import("@/components/layout/Banner75"))),
   {
     name: "Banner75",
     friendlyName: "Banner 75/25",
@@ -164,7 +164,7 @@ Builder.registerComponent(
 
 // Banner 50
 Builder.registerComponent(
-  withChildren(dynamic(() => import("@/components/sections/Banner50"))),
+  withChildren(dynamic(() => import("@/components/layout/Banner50"))),
   {
     name: "Banner50",
     friendlyName: "Banner 50/50",
@@ -253,7 +253,7 @@ Builder.registerComponent(
 
 // Carousel
 Builder.registerComponent(
-  withChildren(dynamic(() => import("@/components/sections/Carousel"))),
+  withChildren(dynamic(() => import("@/components/layout/Carousel"))),
   {
     name: "Carousel",
     friendlyName: "Carousel",
@@ -314,7 +314,7 @@ Builder.registerComponent(
 
 // Tabs
 Builder.registerComponent(
-  dynamic(() => import("@/components/sections/Tabs")),
+  dynamic(() => import("@/components/layout/Tabs")),
   {
     name: "Tabs",
     friendlyName: "Tabs",
@@ -355,7 +355,8 @@ Builder.registerComponent(
             type: "string",
             enum: ["content", "link"],
             defaultValue: "content",
-            helperText: "Tab type: content (shows blocks) or link (navigates to URL)",
+            helperText:
+              "Tab type: content (shows blocks) or link (navigates to URL)",
           },
           {
             name: "content",
