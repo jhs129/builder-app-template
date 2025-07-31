@@ -1,13 +1,13 @@
 import { BuilderBlocks, type BuilderElement } from "@builder.io/react";
 import { useState, useRef, useEffect } from "react";
-import { Themeable, getThemeClasses } from "@/types";
+import { Themeable, getThemeClasses, Stylable } from "@/types";
 
 export interface AccordionItem {
   headline: string;
   content: { blocks: BuilderElement[] };
 }
 
-export interface AccordionProps extends Themeable {
+export interface AccordionProps extends Themeable, Stylable {
   groups: AccordionItem[];
   alignment?: string;
   builderBlock?: BuilderElement;
@@ -33,6 +33,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   groupHeadlineLevel = "h4",
   body,
   alwaysExpanded = false,
+  className,
 }) => {
   const animationDuration = 300; // Best practice: 300ms for smooth UX
   const HeadlineTag = headlineLevel;
@@ -107,7 +108,7 @@ export const Accordion: React.FC<AccordionProps> = ({
         key={index}
         ref={(el) => { itemRefs.current[index] = el; }}
         id={`accordion-${accordionId}-item-${index}`}
-        className="border-b border-primary last:border-b-0"
+        className={`border-b border-primary last:border-b-0 ${className}`}
       >
         {alwaysExpanded ? (
           <div className={`w-full flex justify-between items-center ${getAccordionItemClasses()}`}>
