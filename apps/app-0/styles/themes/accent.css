@@ -38,34 +38,39 @@
 
 /* Legacy class support - will be phased out */
 .theme.theme-accent {
-  @apply bg-primary-accent text-primary-light;
+  background-color: var(--accent-purple);
+  color: var(--primary-light);
 }
 
 .theme.theme-accent h2 {
-  @apply text-primary-light;
+  color: var(--primary-light);
 }
 
 .theme.theme-accent h3 {
-  @apply text-primary-light;
+  color: var(--primary-light);
 }
 
 .theme.theme-accent h4 {
-  @apply text-primary-light;
+  color: var(--primary-light);
 }
 
 .theme.theme-accent h5 {
-  @apply text-accent-cyan;
+  color: var(--accent-cyan);
 }
 
 .theme.theme-accent h6 {
-  @apply text-primary-light;
+  color: var(--primary-light);
 }
 
 .theme.theme-accent p {
-  @apply text-primary-light;
+  color: var(--primary-light);
 }
 
 .theme.theme-accent a:not(.theme-btn) {
-  @apply text-accent-cyan hover:text-accent-teal;
+  color: var(--accent-cyan);
+}
+
+.theme.theme-accent a:not(.theme-btn):hover {
+  color: var(--accent-teal);
 }
 

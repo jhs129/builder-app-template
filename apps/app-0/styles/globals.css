@@ -46,7 +46,11 @@
 
   /* Base Typography */
   body {
-    @apply bg-theme-bg font-sans text-base antialiased;
+    background-color: var(--theme-bg);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1,
@@ -75,13 +79,21 @@
   }
 
   h5 {
-    @apply text-2xl text-theme-heading-alt font-accent inline-block;
+    font-size: 1.5rem;
+    color: var(--theme-heading-alt);
+    font-family: var(--font-accent);
+    display: inline-block;
     transform: rotate(-3deg);
     transform-origin: center;
   }
 
   h6 {
-    @apply text-theme-heading-alt uppercase tracking-wider text-sm font-sans mb-4;
+    color: var(--theme-heading-alt);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    font-family: var(--font-primary);
+    margin-bottom: 1rem;
   }
 
   p {
@@ -109,7 +121,11 @@
   }
 
   a {
-    @apply text-theme-link transition-colors duration-200 ease-in-out no-underline;
+    color: var(--theme-link);
+    transition-property: color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    text-decoration: none;
   }
 
   /* Default Image Styles */
@@ -161,7 +177,9 @@
 
   /* Default Button Colors - Can be overridden by themes */
   .btn-primary {
-    @apply bg-theme-heading-alt text-theme-btn-text border-transparent;
+    background-color: var(--theme-heading-alt);
+    color: var(--theme-btn-text);
+    border-color: transparent;
   }
 
   .btn-primary:hover {
@@ -170,11 +188,14 @@
 
   /* Outlined Button Colors - Can be overridden by themes */
   .btn-outlined {
-    @apply bg-transparent text-theme-heading-alt border-theme-heading-alt;
+    background-color: transparent;
+    color: var(--theme-heading-alt);
+    border-color: var(--theme-heading-alt);
   }
 
   .btn-outlined:hover {
-    @apply bg-theme-heading-alt text-primary-light;
+    background-color: var(--theme-heading-alt);
+    color: var(--primary-light);
   }
 
   /* Component Layout Classes - Mobile First */
