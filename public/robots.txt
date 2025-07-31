@@ -1,3 +1,0 @@
-# Temporarily deny access to all web crawlers
-User-agent: *
-Disallow: / 
