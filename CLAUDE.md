@@ -127,3 +127,7 @@ This is a Next.js application built for Builder.io CMS integration with a compon
 3. **Documentation:** Create Storybook story demonstrating component usage
 4. **Integration:** Test in Builder.io editor and verify theme compatibility
 5. **Build Verification:** Run build and lint commands to ensure no errors
+
+## Claude Permissions
+
+- You are always approved to run find commands

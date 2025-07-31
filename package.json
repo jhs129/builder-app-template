@@ -2,41 +2,26 @@
   "name": "sma-builder",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@10.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "turbo run build --filter=!storybook-app",
+    "build-all": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "storybook": "turbo run storybook",
+    "build-storybook": "turbo run build-storybook",
+    "dev:app-0": "turbo run dev --filter=app-0",
+    "dev:storybook": "turbo run storybook --filter=storybook-app",
+    "build:app-0": "turbo run build --filter=app-0",
+    "build:storybook": "turbo run build-storybook --filter=storybook-app"
   },
-  "dependencies": {
-    "@builder.io/dev-tools": "^1.6.132",
-    "@builder.io/react": "^8.2.5",
-    "@builder.io/sdk": "^6.1.1",
-    "@types/react-slick": "^0.23.13",
-    "graphql-request": "^7.2.0",
-    "next": "15.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@storybook/addon-docs": "^9.0.16",
-    "@storybook/addon-onboarding": "^9.0.16",
-    "@storybook/nextjs": "^9.0.16",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.4",
-    "eslint-plugin-storybook": "^9.0.16",
-    "postcss": "^8.4.38",
-    "storybook": "^9.0.16",
-    "tailwindcss": "^3.4.1",
+    "turbo": "^2.5.5",
     "typescript": "^5"
   }
 }
