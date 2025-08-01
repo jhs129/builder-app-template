@@ -1,12 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/stories/**/*.{js,ts,jsx,tsx,mdx}",
-    "./apps/**/*.{js,ts,jsx,tsx,mdx}",
-    "./packages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./stories/**/*.{js,ts,jsx,tsx,mdx}",
+    "../../packages/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "../../packages/types/**/*.{js,ts,jsx,tsx,mdx}",
+    "../app-0/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
     // Ensure all background color classes for design kit are included
