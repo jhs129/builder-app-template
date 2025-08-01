@@ -70,16 +70,16 @@ export const WithMultipleButtons: Story = {
 
 export const HeroVersion: Story = {
   args: {
-    headline: "Master Your Mind",
-    description: "Join millions who have transformed their lives through the Silva Method. Unlock your potential with proven meditation and mind control techniques.",
+    headline: "HEADLINE",
+    description: "DESCRIPTION",
     alignment: "center",
     theme: "accent",
     isHero: true,
   },
   render: (args) => (
     <TileContent {...args}>
-      <Button label="Start Your Journey" href="#" theme={args.theme} />
-      <Button label="Watch Demo" href="#" theme={args.theme} />
+      <Button label="BUTTON LABEL" href="#" theme={args.theme} />
+      <Button label="BUTTON LABEL" href="#" theme={args.theme} />
     </TileContent>
   ),
 };

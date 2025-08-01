@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { Navigation, Level1Item, Level2Item } from "@repo/types";
+import { useSiteContext } from "../../contexts/SiteContextProvider";
 
 interface HeaderProps {
   logo?: string;
@@ -66,6 +67,8 @@ const Header = ({
 
   // Combine items for mobile menu
   const mobileNavItems = [...leftNavItems, ...rightNavItems];
+
+  const { siteContext } = useSiteContext();
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -260,7 +263,7 @@ const Header = ({
             <div className="relative w-32 h-[40px]">
               <Image
                 src={logo}
-                alt="The Silva Method - Atlanta & Western North Carolina"
+                alt={`${siteContext?.data?.siteName} Logo`}
                 width={128}
                 height={40}
                 style={{
@@ -291,7 +294,7 @@ const Header = ({
             <div className="relative w-[200px] h-[60px]">
               <Image
                 src={logo}
-                alt="The Silva Method - Atlanta & Western North Carolina"
+                alt={`${siteContext?.data?.siteName} Logo`}
                 width={200}
                 height={60}
                 style={{

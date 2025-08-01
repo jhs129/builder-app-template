@@ -53,9 +53,9 @@ export const DarkTheme: Story = {
   args: {
     image: "https://placehold.co/600x400/374151/9CA3AF.png",
     eyebrow: "New Course",
-    title: "Master Your Mind with Silva Method",
-    buttonLabel: "Enroll Now",
-    buttonHref: "/courses/silva-method",
+    title: "Lorem ipsum dolor sit amet",
+    buttonLabel: "Button Label",
+    buttonHref: "/courses/course-slug",
     alignment: "center",
     theme: "dark",
   },

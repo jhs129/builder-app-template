@@ -142,7 +142,7 @@ export const LongNavigation: Story = {
         level1: [
           { text: 'Home', href: '/' },
           { text: 'About Us', href: '/about' },
-          { text: 'Silva Method Courses', href: '/courses' },
+          { text: 'Courses', href: '/courses' },
           { text: 'Advanced Workshops', href: '/workshops' },
           { text: 'Private Sessions', href: '/sessions' },
           { text: 'Online Training', href: '/online' },

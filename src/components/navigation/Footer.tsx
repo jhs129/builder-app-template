@@ -31,10 +31,7 @@ const defaultFooterNav: Navigation = {
   data: {
     level1: [
       { text: "Terms of Service", href: "/terms" },
-      { text: "Refund Policy", href: "/refund" },
       { text: "Privacy Policy", href: "/privacy" },
-      { text: "Contact Us", href: "/contact" },
-      { text: "Affiliates", href: "/affiliates" },
       { text: "Blogs", href: "/blogs" },
     ],
   },
@@ -64,8 +61,8 @@ const Footer = ({
           <Link href="/" className="block">
             <div className="relative w-40 md:w-[200px] h-[60px]">
               <Image
-                src="/SMA_Logo_Light_Slim.avif"
-                alt="The Silva Method - Atlanta & Western North Carolina"
+                src={siteContext?.data?.logo || "https://placehold.co/400x100.png?text=Logo"}
+                alt={`${siteContext?.data?.siteName} Logo`}
                 width={200}
                 height={60}
                 style={{
@@ -85,8 +82,6 @@ const Footer = ({
                 {navItems.map((item) => (
                   <div className="disc-none" key={item.text}>
                     <Link
-                      className="hover:text-accent-magenta"
-                      style={{ color: "var(--theme-text)" }}
                       href={item.href || "/"}
                     >
                       {item.text}
@@ -111,7 +106,7 @@ const Footer = ({
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-accent-cyan text-white"
+                    className="hover:text-theme-primary-accent text-theme-text"
                   >
                     <span className="sr-only">{social.name}</span>
                     <i className={`${iconClass} h-6 w-6 text-2xl`} />
@@ -123,7 +118,7 @@ const Footer = ({
 
           {/* Copyright */}
           <div className="text-sm">
-            © {new Date().getFullYear()} Silva Method Atlanta. All rights
+            © {new Date().getFullYear()} {siteContext?.data?.organization?.name}. All rights
             reserved.
           </div>
         </div>

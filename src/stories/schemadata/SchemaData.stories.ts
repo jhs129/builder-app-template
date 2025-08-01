@@ -95,40 +95,40 @@ type WebsiteStory = StoryObj<typeof websiteMeta>;
 
 export const DefaultWebsite: WebsiteStory = {
   args: {
-    name: "Silva Method Atlanta",
-    url: "https://www.silvamethodatlanta.com",
+    name: "HEADLINE",
+    url: "https://www.example.com",
     description:
-      "Learn the Silva Method techniques for mind development, intuition, meditation, and personal growth in Atlanta and Western North Carolina.",
+      "DESCRIPTION",
     inLanguage: "en-US",
   },
 };
 
 export const WebsiteWithPublisher: WebsiteStory = {
   args: {
-    name: "Silva Method Atlanta",
-    url: "https://www.silvamethodatlanta.com",
+    name: "HEADLINE",
+    url: "https://www.example.com",
     description:
-      "Learn the Silva Method techniques for mind development, intuition, meditation, and personal growth in Atlanta and Western North Carolina.",
+      "DESCRIPTION",
     inLanguage: "en-US",
     publisher: {
-      name: "Silva Method Atlanta",
-      url: "https://www.silvamethodatlanta.com",
+      name: "HEADLINE",
+      url: "https://www.example.com",
     },
   },
 };
 
 export const WebsiteWithSearch: WebsiteStory = {
   args: {
-    name: "Silva Method Atlanta",
-    url: "https://www.silvamethodatlanta.com",
+    name: "HEADLINE",
+    url: "https://www.example.com",
     description:
-      "Learn the Silva Method techniques for mind development, intuition, meditation, and personal growth in Atlanta and Western North Carolina.",
+          "DESCRIPTION",
     inLanguage: "en-US",
     potentialAction: [
       {
         "@type": "SearchAction",
         target:
-          "https://www.silvamethodatlanta.com/search?q={search_term_string}",
+          "https://www.example.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     ],

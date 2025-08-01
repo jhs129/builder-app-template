@@ -39,18 +39,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    eventId: "silva-level-1-training-2024",
+    eventId: "event-slug",
     eventType: "EducationEvent",
-    name: "Silva Method Level 1 Training",
+    name: "HEADLINE",
     description:
-      "A comprehensive 4-day training program introducing the Silva Method techniques for mind development and intuitive abilities.",
+      "DESCRIPTION",
     startDate: "2024-03-15T09:00:00",
     endDate: "2024-03-18T17:00:00",
     eventAttendanceMode: "OfflineEventAttendanceMode",
     eventStatus: "EventScheduled",
     location: {
       type: "Place",
-      name: "Silva Method International Headquarters",
+      name: "Location Name",
       address: {
         address1: "123 Mind Development Blvd",
         city: "Laredo",
@@ -60,17 +60,17 @@ export const Default: Story = {
       },
     },
     organizer: {
-      name: "Silva Method International",
-      url: "https://silvamethod.com",
+      name: "Organization Name",
+      url: "https://example.com",
       logo: {
         url: "https://placehold.co/200x100.png",
         width: 200,
         height: 100,
       },
       address: {
-        streetAddress: "123 Mind Development Blvd",
-        addressLocality: "Laredo",
-        addressRegion: "TX",
+        streetAddress: "123 Street Address",
+        addressLocality: "City",
+        addressRegion: "State",
         postalCode: "78041",
         addressCountry: "US",
       },
@@ -78,13 +78,13 @@ export const Default: Story = {
         {
           contactType: "customer service",
           telephone: "+1-956-722-2897",
-          email: "info@silvamethod.com",
+          email: "info@example.com",
           areaServed: "Worldwide",
           availableLanguage: ["English", "Spanish"],
         },
       ],
     },
-    url: "https://silvamethod.com/events/level-1-training",
+    url: "https://example.com/events/event-slug",
     inLanguage: "en-US",
     maximumAttendeeCapacity: 50,
     remainingAttendeeCapacity: 25,
@@ -93,11 +93,11 @@ export const Default: Story = {
 
 export const OnlineEvent: Story = {
   args: {
-    eventId: "silva-online-webinar-2024",
+    eventId: "event-slug",
     eventType: "EducationEvent",
-    name: "Silva Method Online Webinar",
+    name: "HEADLINE",
     description:
-      "An introductory webinar to Silva Method techniques, accessible from anywhere in the world.",
+      "DESCRIPTION",
     startDate: "2024-04-10T19:00:00",
     endDate: "2024-04-10T21:00:00",
     eventAttendanceMode: "OnlineEventAttendanceMode",
@@ -105,11 +105,11 @@ export const OnlineEvent: Story = {
     location: {
       type: "VirtualLocation",
       url: "https://zoom.us/j/123456789",
-      name: "Silva Method Zoom Room",
+      name: "Zoom Room",
     },
     organizer: {
-      name: "Silva Method International",
-      url: "https://silvamethod.com",
+      name: "Organization Name",
+      url: "https://example.com",
       logo: {
         url: "https://placehold.co/200x100.png",
         width: 200,
@@ -119,21 +119,21 @@ export const OnlineEvent: Story = {
     performer: [
       {
         type: "Person",
-        name: "Dr. Laura Silva",
-        url: "https://silvamethod.com/instructors/laura-silva",
+        name: "Person Name",
+        url: "https://example.com/instructors/person-slug",
         image: "https://placehold.co/300x400.png",
       },
     ],
     offers: [
       {
         name: "Free Webinar Access",
-        url: "https://silvamethod.com/register-webinar",
+        url: "https://example.com/register-webinar",
         price: "0",
         priceCurrency: "USD",
         availability: "InStock",
       },
     ],
-    url: "https://silvamethod.com/events/online-webinar",
+    url: "https://example.com/events/event-slug",
     inLanguage: "en-US",
     maximumAttendeeCapacity: 1000,
     remainingAttendeeCapacity: 750,
@@ -142,11 +142,11 @@ export const OnlineEvent: Story = {
 
 export const WithSponsors: Story = {
   args: {
-    eventId: "silva-conference-2024",
+    eventId: "event-slug",
     eventType: "EducationEvent",
-    name: "Silva Method Conference 2024",
+    name: "HEADLINE",
     description:
-      "Annual conference featuring advanced Silva Method techniques and special guest speakers.",
+      "DESCRIPTION",
     startDate: "2024-06-01T08:00:00",
     endDate: "2024-06-03T18:00:00",
     eventAttendanceMode: "MixedEventAttendanceMode",
@@ -163,8 +163,8 @@ export const WithSponsors: Story = {
       },
     },
     organizer: {
-      name: "Silva Method International",
-      url: "https://silvamethod.com",
+      name: "Organization Name",
+      url: "https://example.com",
       logo: {
         url: "https://placehold.co/200x100.png",
         width: 200,
@@ -196,7 +196,7 @@ export const WithSponsors: Story = {
     offers: [
       {
         name: "Early Bird Registration",
-        url: "https://silvamethod.com/register-conference",
+        url: "https://example.com/register-conference",
         price: "299.00",
         priceCurrency: "USD",
         availability: "InStock",
@@ -204,18 +204,18 @@ export const WithSponsors: Story = {
       },
       {
         name: "Regular Registration",
-        url: "https://silvamethod.com/register-conference",
+        url: "https://example.com/register-conference",
         price: "399.00",
         priceCurrency: "USD",
         availability: "InStock",
         validFrom: "2024-05-01T00:00:00",
       },
     ],
-    url: "https://silvamethod.com/events/conference-2024",
+    url: "https://example.com/events/event-slug",
     inLanguage: "en-US",
     audience: {
-      audienceType: "Silva Method practitioners and enthusiasts",
-      name: "Mind Development Community",
+      audienceType: "Audience Type",
+      name: "Community Name",
     },
     maximumAttendeeCapacity: 500,
     remainingAttendeeCapacity: 150,

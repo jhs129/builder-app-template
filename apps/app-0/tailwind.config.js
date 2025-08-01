@@ -23,7 +23,7 @@ module.exports = {
     "bg-accent-cyan",
     "bg-accent-teal",
     "bg-accent-light-purple",
-    "bg-accent-silva-blue",
+ 
     
     // Theme-aware color classes
     "bg-theme-bg",
@@ -75,7 +75,7 @@ module.exports = {
         "accent-cyan": "var(--accent-cyan, #5ce1e6)",
         "accent-teal": "var(--accent-teal, #0dcaf0)",
         "accent-light-purple": "var(--accent-light-purple, #8c52ff)",
-        "accent-silva-blue": "var(--accent-silva-blue, #3B82F6)",
+
         
         // Theme-aware color properties (new)
         "theme-bg": "var(--theme-bg, var(--primary-light))",

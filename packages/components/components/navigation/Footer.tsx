@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Navigation, SocialNetwork } from "@repo/types";
+import { Navigation, SocialNetwork, Themeable } from "@repo/types";
 import { socialNetworkIconStyles, SocialNetworkName } from "@repo/types/social";
 import { useSiteContext } from "../../contexts/SiteContextProvider";
 
-interface FooterProps {
+interface FooterProps extends Themeable {
   navigation?: Navigation;
   socialNetworks?: SocialNetwork[];
 }
@@ -39,6 +39,8 @@ const defaultFooterNav: Navigation = {
 };
 
 const Footer = ({
+  inheritTheme = false,
+  theme = "dark",
   navigation: footerNav = defaultFooterNav,
   socialNetworks,
 }: FooterProps) => {
@@ -51,9 +53,8 @@ const Footer = ({
 
   return (
     <footer
-      data-theme="gradient"
-      className="py-12 font-sans"
-      style={{ color: "var(--theme-text)" }}
+      data-theme={theme}
+      className="py-12 font-sans bg-theme-bg"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-8">
@@ -62,7 +63,7 @@ const Footer = ({
             <div className="relative w-40 md:w-[200px] h-[60px]">
               <Image
                 src="https://placehold.co/400x100/png?text=Logo"
-                alt="The Silva Method - Atlanta & Western North Carolina"
+                alt="Company Logo Image"
                 width={200}
                 height={60}
                 style={{
@@ -82,8 +83,7 @@ const Footer = ({
                 {navItems.map((item) => (
                   <div className="disc-none" key={item.text}>
                     <Link
-                      className="hover:text-accent-magenta"
-                      style={{ color: "var(--theme-text)" }}
+                      className="hover:text-theme-link text-theme-text"
                       href={item.href || "/"}
                     >
                       {item.text}
@@ -108,7 +108,7 @@ const Footer = ({
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-accent-cyan text-white"
+                    className="hover:text-theme-link text-theme-text"
                   >
                     <span className="sr-only">{social.name}</span>
                     <i className={`${iconClass} h-6 w-6 text-2xl`} />
@@ -119,9 +119,8 @@ const Footer = ({
           )}
 
           {/* Copyright */}
-          <div className="text-sm">
-            © {new Date().getFullYear()} Silva Method Atlanta. All rights
-            reserved.
+          <div className="text-sm text-theme-text">
+            © {new Date().getFullYear()} {siteContext?.data?.organization?.name}. All rights reserved.
           </div>
         </div>
       </div>

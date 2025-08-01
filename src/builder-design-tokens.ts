@@ -1,10 +1,10 @@
 import { Builder } from "@builder.io/react";
 
-// Register Silva Method design tokens with Builder.io
+// Register design tokens with Builder.io
 Builder.register("editor.settings", {
   designTokens: {
     colors: [
-      // Primary Silva Method Colors
+      // Primary Colors
       { name: "Primary Dark", value: "var(--primary-dark, #1d0f34)" },
       { name: "Primary Light", value: "var(--primary-light, #ffffff)" },
       { name: "Secondary Light", value: "var(--secondary-light, #f5f5f5)" },
@@ -40,12 +40,12 @@ Builder.register("editor.settings", {
 
       
 
-      // Silva Method Specific Sizes
-      { name: "Silva Hero", value: "40px" },
-      { name: "Silva Heading", value: "24px" },
-      { name: "Silva Subheading", value: "18px" },
-      { name: "Silva Body", value: "14px" },
-      { name: "Silva Small", value: "12px" },
+      // Brand Specific Sizes
+      { name: "Hero", value: "40px" },
+      { name: "Heading", value: "24px" },
+      { name: "Subheading", value: "18px" },
+      { name: "Body", value: "14px" },
+      { name: "Body Small", value: "12px" },
     ],
 
     spacing: [
@@ -65,12 +65,12 @@ Builder.register("editor.settings", {
       { name: "7XL", value: "96px" },
       { name: "8XL", value: "128px" },
 
-      // Silva Method Specific Spacing
-      { name: "Silva Section", value: "36px" },
-      { name: "Silva Container", value: "50px" },
-      { name: "Silva Card", value: "32px" },
-      { name: "Silva Text", value: "16px" },
-      { name: "Silva Element", value: "20px" },
+      // Brand Specific Spacing
+      { name: "Section", value: "36px" },
+      { name: "Container", value: "50px" },
+      { name: "Card", value: "32px" },
+      { name: "Text", value: "16px" },
+      { name: "Element", value: "20px" },
     ],
 
     borderRadius: [
@@ -112,49 +112,3 @@ Builder.register("editor.settings", {
   designTokensOptional: true,
 });
 
-// Register Silva Method specific gradients as custom options
-Builder.register("editor.settings", {
-  customCSS: `
-    .silva-gradient-primary {
-      background: linear-gradient(rgba(102, 16, 242, 0.63), rgba(175, 47, 191, 0.64) 50%, rgba(13, 202, 240, 0.63) 100%);
-    }
-
-    .silva-gradient-secondary {
-      background: linear-gradient(89deg, rgb(140, 82, 255) 7%, rgb(92, 225, 230) 94%);
-    }
-
-    .silva-btn-primary {
-      background-color: rgb(32, 201, 151);
-      color: rgb(255, 255, 255);
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .silva-btn-primary:hover {
-      background-color: rgb(28, 176, 132);
-    }
-
-    .silva-btn-secondary {
-      background-color: rgb(102, 16, 242);
-      color: rgb(255, 255, 255);
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .silva-btn-secondary:hover {
-      background-color: rgb(106, 13, 173);
-    }
-  `,
-});

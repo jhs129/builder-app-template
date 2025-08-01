@@ -174,25 +174,25 @@ export const ManyTabs: Story = {
 export const AsMainHeading: Story = {
   args: {
     theme: "gradient",
-    headline: "Main Silva Method Course Sections",
+    headline: "Headline",
     isHero: true,
     tabs: [
       {
-        headline: "Foundation",
+        headline: "Tab 1",
         type: "content",
         content: {
           blocks: [],
         },
       },
       {
-        headline: "Advanced",
+        headline: "Tab 2",
         type: "content",
         content: {
           blocks: [],
         },
       },
       {
-        headline: "Mastery",
+        headline: "Tab 3",
         type: "content",
         content: {
           blocks: [],

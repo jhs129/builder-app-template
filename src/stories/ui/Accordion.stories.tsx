@@ -37,15 +37,15 @@ type Story = StoryObj<typeof meta>;
 
 const defaultGroups = [
   {
-    headline: "What is the Silva Method?",
+    headline: "HEADLINE",
     content: { blocks: [] },
   },
   {
-    headline: "How long does it take to learn?",
+    headline: "HEADLINE",
     content: { blocks: [] },
   },
   {
-    headline: "What are the benefits?",
+    headline: "HEADLINE",
     content: { blocks: [] },
   },
 ];
@@ -84,7 +84,7 @@ export const WithSubheadlineAndBody: Story = {
   args: {
     headline: "Frequently Asked Questions",
     subheadline: "Everything you need to know",
-    body: "Find answers to the most common questions about the Silva Method and our courses.",
+    body: "DESCRIPTION",
     headlineLevel: "h2",
     theme: "light",
     alignment: "left",

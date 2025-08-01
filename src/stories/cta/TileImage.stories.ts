@@ -33,9 +33,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     image: "https://placehold.co/600x400/EEE/31343C.png",
-    headline: "Transform Your Life",
-    description: "Discover the power of Silva Method meditation techniques.",
-    buttonLabel: "Learn More",
+    headline: "HEADLINE",
+    description: "DESCRIPTION",
+    buttonLabel: "BUTTON LABEL",
     buttonHref: "#",
     alignment: "center",
     theme: "light",
@@ -69,9 +69,9 @@ export const LeftAligned: Story = {
 export const RightAligned: Story = {
   args: {
     image: "https://placehold.co/600x400/7ED321/FFF.png",
-    headline: "Unlock Your Potential",
-    description: "Harness the power of your mind with Silva Method techniques.",
-    buttonLabel: "Discover More",
+    headline: "HEADLINE",
+    description: "DESCRIPTION",
+    buttonLabel: "BUTTON LABEL",
     buttonHref: "/discover",
     alignment: "right",
     theme: "transparent-dark",
@@ -93,9 +93,9 @@ export const DarkTheme: Story = {
 export const AccentTheme: Story = {
   args: {
     image: "https://placehold.co/600x400/9013FE/FFF.png",
-    headline: "Silva Method",
-    description: "The world's most effective mind training program.",
-    buttonLabel: "Join Now",
+    headline: "HEADLINE",
+    description: "DESCRIPTION",
+    buttonLabel: "BUTTON LABEL",
     buttonHref: "/join",
     alignment: "center",
     theme: "accent",
@@ -105,10 +105,10 @@ export const AccentTheme: Story = {
 export const GradientTheme: Story = {
   args: {
     image: "https://placehold.co/600x400/FF6B35/FFF.png",
-    headline: "Meditation Mastery",
+    headline: "HEADLINE",
     description:
-      "Elevate your consciousness and achieve your goals through proven Silva techniques.",
-    buttonLabel: "Start Today",
+      "DESCRIPTION",
+    buttonLabel: "BUTTON LABEL",
     buttonHref: "/start",
     alignment: "center",
     theme: "gradient",
@@ -131,9 +131,9 @@ export const TransparentLight: Story = {
 export const TransparentDark: Story = {
   args: {
     image: "https://placehold.co/600x400/BD10E0/FFF.png",
-    headline: "Inner Peace",
-    description: "Find tranquility and balance through Silva Method practices.",
-    buttonLabel: "Find Peace",
+    headline: "HEADLINE",
+    description: "DESCRIPTION",
+    buttonLabel: "BUTTON LABEL",
     buttonHref: "/peace",
     alignment: "center",
     theme: "transparent-dark",

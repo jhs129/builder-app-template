@@ -17,7 +17,7 @@
 
 /* Apply gradient background to elements that should have it */
 [data-theme="gradient"] {
-  background: linear-gradient(to right, var(--accent-purple), var(--accent-silva-blue), var(--accent-cyan));
+  background: linear-gradient(to right, var(--accent-purple), var(--accent-blue), var(--accent-cyan));
 }
 
 /* Override for specific components that need solid backgrounds */
@@ -26,38 +26,6 @@
 }
 
 
-/* Legacy class support - will be phased out */
-/* .theme.theme-gradient {
-  @apply bg-gradient-to-r from-accent-purple via-accent-silva-blue to-accent-cyan text-primary-light;
-}
-
-.theme.theme-gradient h2 {
-  @apply text-primary-light;
-}
-
-.theme.theme-gradient h3 {
-  @apply text-primary-light;
-}
-
-.theme.theme-gradient h4 {
-  @apply text-primary-light;
-}
-
-.theme.theme-gradient h5 {
-  @apply text-accent-magenta;
-}
-
-.theme.theme-gradient h6 {
-  @apply text-primary-light;
-}
-
-.theme.theme-gradient p {
-  @apply text-primary-light;
-}
-
-.theme.theme-gradient a:not(.theme-btn) {
-  @apply text-secondary-dark hover:text-accent-teal;
-} */
 
 /* Underline colors to match theme accent */
 [data-theme="gradient"] u.underline-accent {

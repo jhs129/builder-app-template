@@ -45,7 +45,7 @@ const extractColorsFromConfig = (): ThemeColor[] => {
     if (colorKey.includes("primary") || colorKey.includes("secondary")) {
       category = "primary";
     }
-    // All other colors (including silva-blue) are accent colors
+
 
     // Generate friendly title from color key
     const title = colorKey

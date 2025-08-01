@@ -95,40 +95,40 @@ type WebsiteStory = StoryObj<typeof websiteMeta>;
 
 export const DefaultWebsite: WebsiteStory = {
   args: {
-    name: "Silva Method Atlanta",
-    url: "https://www.silvamethodatlanta.com",
+    name: "Company Name",
+    url: "https://www.companyname.com",
     description:
-      "Learn the Silva Method techniques for mind development, intuition, meditation, and personal growth in Atlanta and Western North Carolina.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     inLanguage: "en-US",
   },
 };
 
 export const WebsiteWithPublisher: WebsiteStory = {
   args: {
-    name: "Silva Method Atlanta",
-    url: "https://www.silvamethodatlanta.com",
+    name: "Company Name",
+    url: "https://www.companyname.com",
     description:
-      "Learn the Silva Method techniques for mind development, intuition, meditation, and personal growth in Atlanta and Western North Carolina.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     inLanguage: "en-US",
     publisher: {
-      name: "Silva Method Atlanta",
-      url: "https://www.silvamethodatlanta.com",
+      name: "Company Name",
+      url: "https://www.companyname.com",
     },
   },
 };
 
 export const WebsiteWithSearch: WebsiteStory = {
   args: {
-    name: "Silva Method Atlanta",
-    url: "https://www.silvamethodatlanta.com",
+    name: "Company Name",
+    url: "https://www.companyname.com",
     description:
-      "Learn the Silva Method techniques for mind development, intuition, meditation, and personal growth in Atlanta and Western North Carolina.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     inLanguage: "en-US",
     potentialAction: [
       {
         "@type": "SearchAction",
         target:
-          "https://www.silvamethodatlanta.com/search?q={search_term_string}",
+          "https://www.companyname.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     ],

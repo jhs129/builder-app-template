@@ -25,10 +25,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    eyebrow: "HEY FRIEND",
-    headline: "Let's Launch Your Day Dream",
-    description: "Transform your life with the Silva Method. Learn proven meditation techniques that have helped millions unlock their potential and achieve their goals.",
-    buttonLabel: "LEARN MORE",
+    eyebrow: "Eyebrow",
+    headline: "This is a headline",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    buttonLabel: "Button Label",
     buttonHref: "#",
     alignment: "center",
     theme: "light",

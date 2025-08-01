@@ -59,22 +59,20 @@ type Story = StoryObj<typeof meta>;
 const sampleContent = (
   <div className="text-center max-w-4xl">
     <h6 className="text-sm uppercase tracking-wider mb-4 opacity-80">
-      Silva Method Training
+      Eyebrow
     </h6>
     <h1 className="text-5xl font-bold mb-6 leading-tight">
-      Unlock Your Mind&apos;s Extraordinary Potential
+      This is a headline
     </h1>
     <p className="text-lg mb-8 opacity-90 leading-relaxed">
-      Learn the proven Silva Method meditation techniques that have transformed
-      millions of lives. Develop your intuition, enhance focus, and achieve
-      lasting inner peace through our guided programs.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
       <button className="px-8 py-3 bg-accent-green text-white rounded-lg font-medium hover:bg-accent-green/90 transition-colors">
-        Start Your Journey
+        Button Label
       </button>
       <button className="px-8 py-3 bg-transparent border-2 border-current rounded-lg font-medium hover:bg-white/10 transition-colors">
-        Learn More
+        Button Label
       </button>
     </div>
   </div>
@@ -140,17 +138,16 @@ export const LeftAligned: Story = {
     children: (
       <div className="max-w-2xl">
         <h6 className="text-sm uppercase tracking-wider mb-4 opacity-80">
-          Transform Your Life
+          Eyebrow
         </h6>
         <h1 className="text-5xl font-bold mb-6 leading-tight">
-          Silva Method Meditation
+          This is a headline
         </h1>
         <p className="text-lg mb-8 opacity-90 leading-relaxed">
-          Join thousands of students who have discovered their inner potential
-          through our proven meditation techniques.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <button className="px-8 py-3 bg-accent-green text-white rounded-lg font-medium hover:bg-accent-green/90 transition-colors">
-          Get Started Today
+          Button Label
         </button>
       </div>
     ),
@@ -169,17 +166,16 @@ export const RightAligned: Story = {
     children: (
       <div className="max-w-2xl text-right">
         <h6 className="text-sm uppercase tracking-wider mb-4 opacity-80">
-          Silva Method Training
+          Eyebrow
         </h6>
         <h1 className="text-5xl font-bold mb-6 leading-tight">
-          Master Your Mind
+          This is a headline
         </h1>
         <p className="text-lg mb-8 opacity-90 leading-relaxed">
-          Experience the power of guided meditation and unlock your mind&apos;s
-          extraordinary capabilities.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <button className="px-8 py-3 bg-accent-purple text-white rounded-lg font-medium hover:bg-accent-purple/90 transition-colors">
-          Explore Programs
+          Button Label
         </button>
       </div>
     ),

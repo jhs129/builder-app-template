@@ -39,37 +39,37 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    eventId: "silva-level-1-training-2024",
+    eventId: "event-id-2024",
     eventType: "EducationEvent",
-    name: "Silva Method Level 1 Training",
+    name: "This is a headline",
     description:
-      "A comprehensive 4-day training program introducing the Silva Method techniques for mind development and intuitive abilities.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     startDate: "2024-03-15T09:00:00",
     endDate: "2024-03-18T17:00:00",
     eventAttendanceMode: "OfflineEventAttendanceMode",
     eventStatus: "EventScheduled",
     location: {
       type: "Place",
-      name: "Silva Method International Headquarters",
+      name: "Company Name",
       address: {
-        address1: "123 Mind Development Blvd",
-        city: "Laredo",
+        address1: "123 Main St",
+        city: "Anytown",
         state: "TX",
         postalCode: "78041",
         country: "US",
       },
     },
     organizer: {
-      name: "Silva Method International",
-      url: "https://silvamethod.com",
+      name: "Company Name",
+      url: "https://companyname.com",
       logo: {
         url: "https://placehold.co/200x100.png",
         width: 200,
         height: 100,
       },
       address: {
-        streetAddress: "123 Mind Development Blvd",
-        addressLocality: "Laredo",
+        streetAddress: "123 Main St",
+        addressLocality: "Anytown",
         addressRegion: "TX",
         postalCode: "78041",
         addressCountry: "US",
@@ -78,13 +78,13 @@ export const Default: Story = {
         {
           contactType: "customer service",
           telephone: "+1-956-722-2897",
-          email: "info@silvamethod.com",
+          email: "info@companyname.com",
           areaServed: "Worldwide",
           availableLanguage: ["English", "Spanish"],
         },
       ],
     },
-    url: "https://silvamethod.com/events/level-1-training",
+    url: "https://companyname.com/events/level-1-training",
     inLanguage: "en-US",
     maximumAttendeeCapacity: 50,
     remainingAttendeeCapacity: 25,
@@ -93,11 +93,11 @@ export const Default: Story = {
 
 export const OnlineEvent: Story = {
   args: {
-    eventId: "silva-online-webinar-2024",
+    eventId: "online-webinar-2024",
     eventType: "EducationEvent",
-    name: "Silva Method Online Webinar",
+    name: "This is a headline",
     description:
-      "An introductory webinar to Silva Method techniques, accessible from anywhere in the world.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     startDate: "2024-04-10T19:00:00",
     endDate: "2024-04-10T21:00:00",
     eventAttendanceMode: "OnlineEventAttendanceMode",
@@ -105,11 +105,11 @@ export const OnlineEvent: Story = {
     location: {
       type: "VirtualLocation",
       url: "https://zoom.us/j/123456789",
-      name: "Silva Method Zoom Room",
+      name: "Company Name Zoom Room",
     },
     organizer: {
-      name: "Silva Method International",
-      url: "https://silvamethod.com",
+      name: "Company Name",
+      url: "https://companyname.com",
       logo: {
         url: "https://placehold.co/200x100.png",
         width: 200,
@@ -119,21 +119,21 @@ export const OnlineEvent: Story = {
     performer: [
       {
         type: "Person",
-        name: "Dr. Laura Silva",
-        url: "https://silvamethod.com/instructors/laura-silva",
+        name: "Dr. John Doe",
+        url: "https://companyname.com/instructors/john-doe",
         image: "https://placehold.co/300x400.png",
       },
     ],
     offers: [
       {
         name: "Free Webinar Access",
-        url: "https://silvamethod.com/register-webinar",
+        url: "https://companyname.com/register-webinar",
         price: "0",
         priceCurrency: "USD",
         availability: "InStock",
       },
     ],
-    url: "https://silvamethod.com/events/online-webinar",
+    url: "https://companyname.com/events/online-webinar",
     inLanguage: "en-US",
     maximumAttendeeCapacity: 1000,
     remainingAttendeeCapacity: 750,
@@ -142,11 +142,11 @@ export const OnlineEvent: Story = {
 
 export const WithSponsors: Story = {
   args: {
-    eventId: "silva-conference-2024",
+    eventId: "event-id-2024",
     eventType: "EducationEvent",
-    name: "Silva Method Conference 2024",
+    name: "This is a headline",
     description:
-      "Annual conference featuring advanced Silva Method techniques and special guest speakers.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     startDate: "2024-06-01T08:00:00",
     endDate: "2024-06-03T18:00:00",
     eventAttendanceMode: "MixedEventAttendanceMode",
@@ -163,8 +163,8 @@ export const WithSponsors: Story = {
       },
     },
     organizer: {
-      name: "Silva Method International",
-      url: "https://silvamethod.com",
+      name: "Company Name",
+      url: "https://companyname.com",
       logo: {
         url: "https://placehold.co/200x100.png",
         width: 200,
@@ -174,8 +174,8 @@ export const WithSponsors: Story = {
     sponsor: [
       {
         type: "Organization",
-        name: "Mind Development Institute",
-        url: "https://minddevelopment.org",
+        name: "Company Name",
+        url: "https://companyname.com",
         logo: {
           url: "https://placehold.co/150x75.png",
           width: 150,
@@ -184,8 +184,8 @@ export const WithSponsors: Story = {
       },
       {
         type: "Organization",
-        name: "Consciousness Research Foundation",
-        url: "https://consciousnessresearch.org",
+        name: "Company Name",
+        url: "https://companyname.com",
         logo: {
           url: "https://placehold.co/150x75.png",
           width: 150,
@@ -196,7 +196,7 @@ export const WithSponsors: Story = {
     offers: [
       {
         name: "Early Bird Registration",
-        url: "https://silvamethod.com/register-conference",
+        url: "https://companyname.com/register-conference",
         price: "299.00",
         priceCurrency: "USD",
         availability: "InStock",
@@ -204,18 +204,18 @@ export const WithSponsors: Story = {
       },
       {
         name: "Regular Registration",
-        url: "https://silvamethod.com/register-conference",
+        url: "https://companyname.com/register-conference",
         price: "399.00",
         priceCurrency: "USD",
         availability: "InStock",
         validFrom: "2024-05-01T00:00:00",
       },
     ],
-    url: "https://silvamethod.com/events/conference-2024",
+    url: "https://companyname.com/events/conference-2024",
     inLanguage: "en-US",
     audience: {
-      audienceType: "Silva Method practitioners and enthusiasts",
-      name: "Mind Development Community",
+      audienceType: "Company Name practitioners and enthusiasts",
+      name: "Company Name Community",
     },
     maximumAttendeeCapacity: 500,
     remainingAttendeeCapacity: 150,

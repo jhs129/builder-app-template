@@ -3,7 +3,7 @@ import "./registry";
 import "./registry/seo";
 import "./builder-design-tokens";
 
-// Register custom insert menus for Silva Method components
+// Register custom insert menus 
 Builder.register("insertMenu", {
   name: "Navigation",
   items: [
