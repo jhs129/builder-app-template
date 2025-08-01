@@ -9,6 +9,7 @@ import {
   type BuilderAppConfig,
   DEFAULT_DESIGN_TOKENS
 } from "@repo/components/registration";
+import { registerThemeInjection } from "./theme-injection";
 
 // Default configuration for app-0
 export const APP_0_BUILDER_CONFIG: BuilderAppConfig = {
@@ -26,6 +27,9 @@ export const APP_0_BUILDER_CONFIG: BuilderAppConfig = {
 
 // Function to initialize Builder.io with app-specific configuration
 export async function initializeBuilder(config: BuilderAppConfig = APP_0_BUILDER_CONFIG) {
+  // Register theme injection for Builder.io preview environment
+  registerThemeInjection();
+  
   // Register insert menus
   registerInsertMenus(config.insertMenus);
   

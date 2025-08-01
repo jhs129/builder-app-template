@@ -139,7 +139,7 @@ Builder.registerComponent(
       ...alignableInputs,
       ...heroicInputs,
       {
-        name: "description",
+        name: "content",
         type: "richText",
         required: true,
         defaultValue:

@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = BuilderDevTools()({
   transpilePackages: ["@repo/components", "@repo/types"],
   i18n: {
-    locales: ['en', 'es', 'fr', 'de', 'it', 'pt', 'ja', 'ko', 'zh'],
+    locales: ['en', 'es'],
     defaultLocale: 'en',
     localeDetection: false, // Disable automatic locale detection to use our middleware
   },
