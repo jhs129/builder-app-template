@@ -1,6 +1,9 @@
-// Builder.io registration
+// Builder.io registration (legacy - use registration/ exports instead)
 export * from './builder-registry';
 export * from './builder-design-tokens';
+
+// New modular registration system
+export * from './registration';
 
 // Registry exports
 export * from './registry';

@@ -5,7 +5,6 @@ import {
   builder,
   useIsPreviewing,
 } from "@builder.io/react";
-import "@repo/components/builder-registry";
 import { DefaultHeader } from "@repo/components";
 import { DefaultFooter } from "@repo/components";
 import { Banner100 } from "@repo/components";

@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { builder } from "@builder.io/react";
 import Head from "next/head";
 import { SiteContextProvider } from "@repo/components";
+import { initializeBuilder } from "../lib/builder-config";
 
 const fontSans = Poppins({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ const fontAccent = Nothing_You_Could_Do({
 });
 
 // Initialize Builder only once at the module level
-const initBuilder = () => {
+const initBuilder = async () => {
   try {
     const apiKey = process.env.NEXT_PUBLIC_BUILDER_API_KEY;
 
@@ -32,6 +33,9 @@ const initBuilder = () => {
     if (!builder.apiKey) {
       builder.init(apiKey);
     }
+
+    // Initialize Builder.io with app-specific configuration
+    await initializeBuilder();
   } catch (error) {
     console.error("Error initializing Builder.io:", error);
   }

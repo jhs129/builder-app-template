@@ -1,6 +1,5 @@
 import React from "react";
 import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
-import "@repo/components/builder-registry";
 import { Header } from "@repo/components";
 import { Footer } from "@repo/components";
 import { PageSEOHead } from "@repo/components";

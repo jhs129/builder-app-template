@@ -4,7 +4,6 @@ import { builder, BuilderComponent } from "@builder.io/react";
 import { Footer } from "@repo/components";
 import { DefaultHeader } from "@repo/components";
 import { NotFoundContent } from "@repo/components";
-import "@repo/components/builder-registry";
 
 interface Custom404Props {
   requestedPath?: string;
