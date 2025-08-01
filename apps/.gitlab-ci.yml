@@ -1,7 +1,0 @@
-stages:
-  - test
-
-dummy-job:
-  stage: test
-  script:
-    - echo "Pipeline success"
