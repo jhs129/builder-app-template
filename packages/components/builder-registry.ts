@@ -18,6 +18,7 @@ Builder.register("insertMenu", {
     { name: "Accordion" },
     { name: "Alert" },
     { name: "Button" },
+    { name: "Headline" },
     { name: "Text" },
     { name: "Image" },
     { name: "Box" },

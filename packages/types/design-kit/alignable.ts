@@ -5,6 +5,18 @@ export interface Alignable {
     alignment?: TextAlignments;
 }
 
+export const alignmentClasses: Record<TextAlignments, string> = {
+  left: "items-start text-left",
+  center: "items-center text-center",
+  right: "items-end text-right",
+} as const;
+
+export const childrenAlignmentClasses: Record<TextAlignments, string> = {
+  left: "justify-start",
+  center: "justify-center",
+  right: "justify-end",
+} as const;
+
 export const alignableInputs = [
     {
       name: "alignment",

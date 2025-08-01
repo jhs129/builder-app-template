@@ -1,6 +1,6 @@
 import { Builder } from "@builder.io/react";
 import dynamic from "next/dynamic";
-import { commonInputs, standardThemes, themeableInputs } from "@repo/types";
+import { commonInputs, standardThemes, themeableInputs, heroicInputs } from "@repo/types";
 
 Builder.registerComponent(
   dynamic(() => import("../components/ui/Button")),
@@ -336,5 +336,38 @@ Builder.registerComponent(
     ],
     noWrap: true,
     // Note: No insertMenu specified, so it won't appear in the insert menu
+  }
+);
+
+// Headline
+Builder.registerComponent(
+  dynamic(() => import("../components/ui/Headline")),
+  {
+    name: "Headline",
+    image: process.env.NEXT_DEFAULT_COMPONENT_IMAGE,
+    inputs: [
+      ...heroicInputs,
+      {
+        name: "level",
+        type: "string",
+        enum: ["h1", "h2", "h3", "h4", "h5", "h6"],
+        defaultValue: "h3",
+        helperText: "HTML heading level for SEO and accessibility",
+      },
+      {
+        name: "children",
+        type: "richText",
+        defaultValue: "Your headline text here",
+        helperText: "The headline text content",
+      },
+      {
+        name: "className",
+        type: "string",
+        helperText: "Additional CSS classes to apply",
+      },
+    ],
+    defaultStyles: {
+      display: "block",
+    },
   }
 );

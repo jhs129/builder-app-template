@@ -134,14 +134,39 @@ Builder.registerComponent(
     inputs: [
       ...themeableInputs,
       ...opacityInputs,
+      ...alignableInputs,
       ...heroicInputs,
       {
-        name: "description",
+        name: "eyebrow",
+        type: "string",
+        helperText: "Optional eyebrow text displayed above the headline",
+      },
+      {
+        name: "eyebrowLevel",
+        type: "string",
+        enum: ["h5", "h6"],
+        defaultValue: "h6",
+        helperText: "HTML heading level for the eyebrow text",
+      },
+      {
+        name: "subheadline",
+        type: "string",
+        helperText: "Optional subheadline text displayed after the main headline",
+      },
+      {
+        name: "subheadlineLevel",
+        type: "string",
+        enum: ["h2", "h3", "h4", "h5", "h6"],
+        defaultValue: "h3",
+        helperText: "HTML heading level for the subheadline",
+      },
+      {
+        name: "content",
         type: "richText",
         required: true,
         defaultValue:
           "Add your content description here. This supports rich text formatting.",
-        helperText: "Description content (supports HTML formatting)",
+        helperText: "Main content (supports HTML formatting)",
       },
       ...commonInputs,
     ],

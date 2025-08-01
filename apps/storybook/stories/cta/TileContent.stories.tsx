@@ -20,6 +20,17 @@ const meta: Meta<typeof TileContent> = {
     isHero: {
       control: { type: "boolean" },
     },
+    maskOpacity: {
+      control: { type: "range", min: 0, max: 1, step: 0.1 },
+    },
+    eyebrowLevel: {
+      control: { type: "select" },
+      options: ["h5", "h6"],
+    },
+    subheadlineLevel: {
+      control: { type: "select" },
+      options: ["h2", "h3", "h4", "h5", "h6"],
+    },
   },
 };
 
@@ -29,20 +40,22 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     headline: "Your Content Title",
-    description: "Add your content description here. This supports rich text formatting.",
+    content: "Add your content description here. This supports rich text formatting.",
     alignment: "center",
     theme: "light",
     isHero: false,
+    maskOpacity: 0.3,
   },
 };
 
 export const WithSingleButton: Story = {
   args: {
     headline: "Get Started Today",
-    description: "Transform your life with proven techniques that have helped millions achieve their goals.",
+    content: "Transform your life with proven techniques that have helped millions achieve their goals.",
     alignment: "center",
     theme: "light",
     isHero: false,
+    maskOpacity: 0.3,
   },
   render: (args) => (
     <TileContent {...args}>
@@ -54,10 +67,11 @@ export const WithSingleButton: Story = {
 export const WithMultipleButtons: Story = {
   args: {
     headline: "Choose Your Path",
-    description: "Whether you're a beginner or looking to advance your practice, we have the perfect course for you.",
+    content: "Whether you're a beginner or looking to advance your practice, we have the perfect course for you.",
     alignment: "center",
     theme: "light",
     isHero: false,
+    maskOpacity: 0.3,
   },
   render: (args) => (
     <TileContent {...args}>
@@ -70,10 +84,11 @@ export const WithMultipleButtons: Story = {
 export const HeroVersion: Story = {
   args: {
     headline: "Master Your Mind",
-    description: "Join millions who have transformed their lives through the Silva Method. Unlock your potential with proven meditation and mind control techniques.",
+    content: "Join millions who have transformed their lives through the Silva Method. Unlock your potential with proven meditation and mind control techniques.",
     alignment: "center",
     theme: "accent",
     isHero: true,
+    maskOpacity: 0.3,
   },
   render: (args) => (
     <TileContent {...args}>
@@ -86,10 +101,11 @@ export const HeroVersion: Story = {
 export const LeftAligned: Story = {
   args: {
     headline: "Left Aligned Content",
-    description: "This content is aligned to the left, perfect for asymmetrical layouts and modern design patterns.",
+    content: "This content is aligned to the left, perfect for asymmetrical layouts and modern design patterns.",
     alignment: "left",
     theme: "dark",
     isHero: false,
+    maskOpacity: 0.3,
   },
   render: (args) => (
     <TileContent {...args}>
@@ -101,10 +117,11 @@ export const LeftAligned: Story = {
 export const RightAligned: Story = {
   args: {
     headline: "Right Aligned Content",
-    description: "This content is aligned to the right, creating visual interest and breaking traditional patterns.",
+    content: "This content is aligned to the right, creating visual interest and breaking traditional patterns.",
     alignment: "right",
     theme: "gradient",
     isHero: false,
+    maskOpacity: 0.3,
   },
   render: (args) => (
     <TileContent {...args}>
@@ -116,10 +133,11 @@ export const RightAligned: Story = {
 export const TransparentLight: Story = {
   args: {
     headline: "Overlay Content",
-    description: "This transparent theme is perfect for placing over images or custom backgrounds.",
+    content: "This transparent theme is perfect for placing over images or custom backgrounds.",
     alignment: "center",
     theme: "transparent-light",
     isHero: false,
+    maskOpacity: 0,
   },
   render: (args) => (
     <TileContent {...args}>
@@ -131,10 +149,11 @@ export const TransparentLight: Story = {
 export const TransparentDark: Story = {
   args: {
     headline: "Dark Overlay Content",
-    description: "This dark transparent theme works great over light backgrounds and images.",
+    content: "This dark transparent theme works great over light backgrounds and images.",
     alignment: "center",
     theme: "transparent-dark",
     isHero: false,
+    maskOpacity: 0,
   },
   render: (args) => (
     <TileContent {...args}>
@@ -146,7 +165,7 @@ export const TransparentDark: Story = {
 export const RichTextContent: Story = {
   args: {
     headline: "Rich Text Example",
-    description: `
+    content: `
       <p>This content demonstrates <strong>rich text formatting</strong> capabilities.</p>
       <ul>
         <li>Bullet point one</li>
@@ -158,11 +177,65 @@ export const RichTextContent: Story = {
     alignment: "left",
     theme: "light",
     isHero: false,
+    maskOpacity: 0.3,
   },
   render: (args) => (
     <TileContent {...args}>
       <Button label="Explore Features" href="#" theme={args.theme} />
       <Button label="Contact Us" href="#" theme={args.theme} />
+    </TileContent>
+  ),
+};
+
+export const WithEyebrowAndSubheadline: Story = {
+  args: {
+    eyebrow: "Featured Course",
+    eyebrowLevel: "h6",
+    headline: "Master Meditation",
+    subheadline: "Transform Your Mind in 30 Days",
+    subheadlineLevel: "h3",
+    content: "This comprehensive course will teach you advanced meditation techniques used by millions worldwide.",
+    alignment: "center",
+    theme: "light",
+    isHero: false,
+    maskOpacity: 0.3,
+  },
+  render: (args) => (
+    <TileContent {...args}>
+      <Button label="Enroll Now" href="#" theme={args.theme} />
+      <Button label="Free Preview" href="#" theme={args.theme} />
+    </TileContent>
+  ),
+};
+
+export const HighMaskOpacity: Story = {
+  args: {
+    headline: "Overlay Content",
+    content: "With high mask opacity, this content appears over a dark overlay, perfect for dramatic effects.",
+    alignment: "center",
+    theme: "light",
+    isHero: false,
+    maskOpacity: 0.8,
+  },
+  render: (args) => (
+    <TileContent {...args}>
+      <Button label="Learn More" href="#" theme={args.theme} />
+    </TileContent>
+  ),
+};
+
+export const NoMask: Story = {
+  args: {
+    headline: "Clean Layout",
+    content: "With zero mask opacity, this content has a clean, minimal appearance without any overlay effects.",
+    alignment: "center",
+    theme: "light",
+    isHero: false,
+    maskOpacity: 0,
+  },
+  render: (args) => (
+    <TileContent {...args}>
+      <Button label="Get Started" href="#" theme={args.theme} />
     </TileContent>
   ),
 };

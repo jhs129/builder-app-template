@@ -11,6 +11,7 @@ export * from './components/ui/Accordion';
 export * from './components/ui/Alert';
 export * from './components/ui/Button';
 export * from './components/ui/DesignKitOverview';
+export * from './components/ui/Headline';
 export * from './components/ui/NotFoundContent';
 
 export * from './components/cta/CardImageCTA';
