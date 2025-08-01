@@ -6,7 +6,7 @@ import { ThemeProvider } from "../common/ThemeProvider";
 
 interface TileImageProps extends Themeable, Alignable, Heroic {
   image: string;
-  description: string;
+  content: string;
   buttonLabel?: string;
   buttonHref?: string;
   className?: string;
@@ -21,7 +21,7 @@ const alignmentClasses: Record<TextAlignments, string> = {
 const TileImage: FC<TileImageProps> = ({
   image,
   headline,
-  description,
+  content,
   buttonLabel,
   buttonHref = "#",
   alignment = "center",
@@ -43,7 +43,7 @@ const TileImage: FC<TileImageProps> = ({
 
   const HeadlineTag = isHero ? "h6" : "h1";
 
-  const content = (
+  const componentContent = (
     <div
       className={`component-tile ${isHero ? 'hero-tile' : ''} relative overflow-hidden ${className}`}
     >
@@ -71,7 +71,7 @@ const TileImage: FC<TileImageProps> = ({
           {/* Description */}
           <div
             className="mb-4 text-base leading-relaxed text-theme-text"
-            dangerouslySetInnerHTML={{ __html: description }}
+            dangerouslySetInnerHTML={{ __html: content }}
           />
 
           {/* Button */}
@@ -85,12 +85,12 @@ const TileImage: FC<TileImageProps> = ({
 
   // Only wrap in ThemeProvider if we have an explicit theme and inheritTheme is false
   if (inheritTheme || !theme) {
-    return content;
+    return componentContent;
   }
 
   return (
     <ThemeProvider theme={theme} inheritTheme={false}>
-      {content}
+      {componentContent}
     </ThemeProvider>
   );
 };

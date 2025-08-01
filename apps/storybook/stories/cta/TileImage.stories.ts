@@ -34,7 +34,7 @@ export const Default: Story = {
   args: {
     image: "https://placehold.co/600x400/EEE/31343C.png",
     headline: "This is a headline",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
     alignment: "center",
@@ -46,7 +46,7 @@ export const WithoutButton: Story = {
   args: {
     image: "https://placehold.co/600x400/333/FFF.png",
     headline: "This is a headline",
-    description:
+    content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     alignment: "center",
     theme: "dark",
@@ -57,7 +57,7 @@ export const LeftAligned: Story = {
   args: {
     image: "https://placehold.co/600x400/4A90E2/FFF.png",
     headline: "This is a headline",
-    description:
+    content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
@@ -70,7 +70,7 @@ export const RightAligned: Story = {
   args: {
     image: "https://placehold.co/600x400/7ED321/FFF.png",
     headline: "This is a headline",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
     alignment: "right",
@@ -82,7 +82,7 @@ export const DarkTheme: Story = {
   args: {
     image: "https://placehold.co/600x400/1A1A1A/FFF.png",
     headline: "This is a headline",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
     alignment: "center",
@@ -94,7 +94,7 @@ export const AccentTheme: Story = {
   args: {
     image: "https://placehold.co/600x400/9013FE/FFF.png",
     headline: "This is a headline",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
     alignment: "center",
@@ -106,7 +106,7 @@ export const GradientTheme: Story = {
   args: {
     image: "https://placehold.co/600x400/FF6B35/FFF.png",
     headline: "This is a headline",
-    description:
+    content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
@@ -119,7 +119,7 @@ export const TransparentLight: Story = {
   args: {
     image: "https://placehold.co/600x400/50E3C2/333.png",
     headline: "This is a headline",
-    description:
+    content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
@@ -132,7 +132,7 @@ export const TransparentDark: Story = {
   args: {
     image: "https://placehold.co/600x400/BD10E0/FFF.png",
     headline: "This is a headline",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
     alignment: "center",
@@ -144,7 +144,7 @@ export const RichContent: Story = {
   args: {
     image: "https://placehold.co/600x400/F5A623/FFF.png",
     headline: "Advanced Training",
-    description: `
+    content: `
       <p><strong>Transform your life</strong> with proven techniques:</p>
       <ul>
         <li>Lorem ipsum dolor sit amet</li>

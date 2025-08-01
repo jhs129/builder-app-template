@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async ({
         options: {
           enrich: true,
           includeRefs: true,
-          locale: locale || 'en',
+          locale: locale || "en",
         },
       })
       .toPromise(),
@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async ({
         options: {
           enrich: true,
           includeRefs: true,
-          locale: locale || 'en',
+          locale: locale || "en",
         },
       })
       .toPromise(),
@@ -152,7 +152,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ article, siteContext }) => {
                     <TileCTA
                       eyebrow={fullContent?.data?.subtitle || ""}
                       headline={fullContent?.data?.title || ""}
-                      description={fullContent?.data?.excerpt || ""}
+                      content={fullContent?.data?.excerpt || ""}
                       theme="transparent-dark"
                       isHero={true}
                       alignment="left"

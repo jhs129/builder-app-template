@@ -27,7 +27,7 @@ export const Default: Story = {
   args: {
     eyebrow: "Eyebrow",
     headline: "This is a headline",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonLabel: "Button Label",
     buttonHref: "#",
     alignment: "center",

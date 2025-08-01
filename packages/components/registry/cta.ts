@@ -63,7 +63,7 @@ Builder.registerComponent(
         helperText: "Optional eyebrow text displayed above the title",
       },
       {
-        name: "description",
+        name: "content",
         type: "longText",
         required: true,
         defaultValue:
@@ -181,8 +181,8 @@ Builder.registerComponent(
         helperText: "Title displayed over the image (renders as h6)",
       },
       {
-        name: "description",
-        type: "longText",
+        name: "content",
+        type: "html",
         required: true,
         defaultValue: "Add your content description here.",
         helperText:

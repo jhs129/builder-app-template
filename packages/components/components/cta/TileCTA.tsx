@@ -5,7 +5,7 @@ import { ThemeProvider } from "../common/ThemeProvider";
 
 interface TileCTAProps extends Themeable, Alignable, Heroic {
   eyebrow?: string;
-  description?: string;
+  content?: string;
   buttonLabel?: string;
   buttonHref?: string;
   className?: string;
@@ -22,7 +22,7 @@ const TileCTA: FC<TileCTAProps> = ({
   eyebrow = "Hey Genius!",
   headline = "Let's Launch Your Day Dream",
   isHero = false,
-  description,
+  content,
   buttonLabel,
   buttonHref = "#",
   alignment = "center",
@@ -39,15 +39,26 @@ const TileCTA: FC<TileCTAProps> = ({
           style={{ opacity: maskOpacity }}
         />
       )}
-      <ThemeProvider theme={theme} inheritTheme={inheritTheme} className={`component-tile ${isHero ? 'hero-tile' : ''} flex flex-col p-8 relative z-10 ${alignmentClasses[alignment]} ${className}`}>
+      <ThemeProvider
+        theme={theme}
+        inheritTheme={inheritTheme}
+        className={`component-tile ${isHero ? "hero-tile" : ""} flex flex-col p-8 relative z-10 ${alignmentClasses[alignment]} ${className}`}
+      >
         {eyebrow && <h5 className="text-theme-heading-alt">{eyebrow}</h5>}
         {isHero ? (
           <h1 className="text-theme-heading">{headline}</h1>
         ) : (
           <h2 className="text-theme-heading">{headline}</h2>
         )}
-        {description && <p className="mb-8 leading-relaxed text-theme-text">{description}</p>}
-        {buttonLabel && <Button href={buttonHref} label={buttonLabel} inheritTheme={true} />}
+        {content && (
+          <div
+            className="mb-8 leading-relaxed text-theme-text"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        )}
+        {buttonLabel && (
+          <Button href={buttonHref} label={buttonLabel} inheritTheme={true} />
+        )}
       </ThemeProvider>
     </div>
   );
