@@ -9,6 +9,7 @@ Builder.register("insertMenu", {
   items: [
     { name: "Header" },
     { name: "Footer" },
+    { name: "VerticalNavigation" },
   ],
 });
 
