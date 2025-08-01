@@ -20,8 +20,6 @@ export * from './components/cta/TileImage';
 export * from './components/cta/TileQuote';
 
 export * from './components/layout/Banner100';
-export * from './components/layout/Banner50';
-export * from './components/layout/Banner75';
 export * from './components/layout/Carousel';
 export * from './components/layout/Tabs';
 

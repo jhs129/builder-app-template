@@ -45,8 +45,6 @@ Builder.register("insertMenu", {
   items: [
     { name: "Core:Section" },
     { name: "Banner100" },
-    { name: "Banner75" },
-    { name: "Banner50" },
     { name: "Carousel" },
     { name: "Tabs" },
  

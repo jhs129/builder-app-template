@@ -45,6 +45,14 @@ module.exports = {
     "hover:bg-theme-btn-outlined-hover-bg",
     "hover:text-theme-btn-outlined-hover-text",
     "outline-theme-focus",
+    
+    // Alignment classes for components
+    "items-start",
+    "items-center", 
+    "items-end",
+    "text-left",
+    "text-center",
+    "text-right",
   ],
   theme: {
     extend: {
