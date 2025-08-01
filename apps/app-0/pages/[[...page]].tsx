@@ -36,7 +36,7 @@ const shouldExcludePath = (url: string): boolean => {
 };
 
 export const getStaticProps: GetStaticProps<PageProps> = async ({ params, locale }) => {
-  const siteContextName = process.env.NEXT_PUBLIC_SITE_CONTEXT_NAME || "sma";
+  const siteContextName = process.env.NEXT_PUBLIC_SITE_CONTEXT_NAME || "builder-app-template";
 
   if (!siteContextName) {
     console.error("No site context name found in environment variable: NEXT_PUBLIC_SITE_CONTEXT_NAME");

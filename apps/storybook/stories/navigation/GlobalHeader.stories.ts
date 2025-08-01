@@ -69,7 +69,7 @@ export const Default: Story = {
   args: {
     navigation1: defaultPrimaryNav,
     navigation2: defaultSecondaryNav,
-    logo: "/SMA_Logo_Dark_Slim.avif",
+    logo: "https://placehold.co/800x600/EEE/5ce1e6.png",
   },
 };
 
