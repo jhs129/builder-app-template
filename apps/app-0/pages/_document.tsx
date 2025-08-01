@@ -10,10 +10,10 @@ class MyDocument extends Document {
     return (
       <Html lang={lang}>
           <Head>
-            <link rel="icon" type="image/png" href="/favicon.png" />
+            <link rel="icon" type="image/png" href="/favicon.ico" />
             <meta name="theme-color" content="#6610F2" />
             <meta name="format-detection" content="telephone=no" />
-            <link rel="apple-touch-icon" href="/favicon.png" />
+            <link rel="apple-touch-icon" href="/favicon.ico" />
             <link
               rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"

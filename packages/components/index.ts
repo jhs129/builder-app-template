@@ -43,4 +43,4 @@ export * from './contexts/ThemeContext';
 export * from './hooks/useTheme';
 
 // Utility exports
-export * from './utils/articleSchema';
+export * from './utils';

@@ -6,6 +6,7 @@ const nextConfig: NextConfig = BuilderDevTools()({
   i18n: {
     locales: ['en', 'es', 'fr', 'de', 'it', 'pt', 'ja', 'ko', 'zh'],
     defaultLocale: 'en',
+    localeDetection: false, // Disable automatic locale detection to use our middleware
   },
   images: {
     domains: ["cdn.shopify.com", "cdn.builder.io", "images.pexels.com", "placehold.co","shopify.com"],
