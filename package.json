@@ -1,5 +1,5 @@
 {
-  "name": "sma-builder",
+  "name": "@jhs129/builder-app-template",
   "version": "0.1.0",
   "private": true,
   "packageManager": "npm@10.0.0",

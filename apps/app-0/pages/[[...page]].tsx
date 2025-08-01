@@ -1,5 +1,5 @@
 import React from "react";
-import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
+import { BuilderComponent, builder, useIsPreviewing, BuilderContent } from "@builder.io/react";
 import { Header } from "@repo/components";
 import { Footer } from "@repo/components";
 import { PageSEOHead } from "@repo/components";
@@ -136,19 +136,27 @@ const Page: React.FC<PageProps> = ({ page, siteContext }) => {
           navigation2={page?.data?.headerNavigation2?.value}
         />
         <main id="main-content" className="flex-grow" role="main">
-          <BuilderComponent
-            model="page"
+        <BuilderContent 
+            key={router.asPath} 
+            model="page" 
             content={page || undefined}
-            options={{
-              locale: router.locale,
-              enrich: true,
-            }}
-            data={{
-              siteContext: siteContext,
-              content: page,
-              lastUpdatedDate: lastUpdatedDate,
-            }}
-          />
+          >
+            {(_content, _loading, fullContent) => (
+              <BuilderComponent
+                model="page"
+                content={fullContent || undefined}
+                options={{
+                  locale: router.locale,
+                  enrich: true,
+                }}
+                data={{
+                  siteContext: siteContext,
+                  content: fullContent,
+                  lastUpdatedDate: lastUpdatedDate,
+                }}
+              />
+            )}
+          </BuilderContent>
         </main>
         <Footer navigation={page?.data?.footerNavigation?.value} />
       </div>

@@ -40,7 +40,7 @@ const TileContent: FC<TileContentProps> = ({
 
   const tileContent = (
     <section
-      className={`component-tile relative flex flex-col ${alignmentClasses[alignment]} ${maskOpacity === 0 ? '!bg-transparent' : 'bg-theme-bg'} ${maskOpacity > 0 ? 'text-white' : 'text-theme-text'} ${className}`}
+      className={`component-tile relative flex flex-col ${alignmentClasses[alignment]} bg-theme-bg ${maskOpacity > 0 ? 'text-white' : 'text-theme-text'} ${className}`}
     >
       {/* Overlay mask - only show if opacity > 0 */}
       {maskOpacity > 0 && (
@@ -87,7 +87,6 @@ const TileContent: FC<TileContentProps> = ({
       <ThemeProvider
         theme={theme}
         inheritTheme={false}
-        className={maskOpacity === 0 ? "!bg-transparent" : ""}
       >
         {tileContent}
       </ThemeProvider>
