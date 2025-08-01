@@ -9,6 +9,12 @@ import {
   buttonInputs,
 } from "@repo/types";
 
+// Helper function to conditionally set image property
+const getImageConfig = () => {
+  const envImage = process.env.NEXT_DEFAULT_COMPONENT_IMAGE;
+  return envImage ? { image: envImage } : {};
+};
+
 
 // Tile Quote
 Builder.registerComponent(
@@ -16,8 +22,7 @@ Builder.registerComponent(
   {
     name: "TileQuote",
     friendlyName: "Tile Quote",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       ...heroicInputs,
       ...themeableInputs,
@@ -45,8 +50,7 @@ Builder.registerComponent(
   {
     name: "TileCTA",
     friendlyName: "Tile CTA",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       ...themeableInputs,
       ...opacityInputs,
@@ -80,8 +84,7 @@ Builder.registerComponent(
   dynamic(() => import("../components/cta/CardImageCTA")),
   {
     name: "CardImageCTA",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       ...themeableInputs,
       ...opacityInputs,
@@ -123,8 +126,7 @@ Builder.registerComponent(
   {
     name: "TileContent",
     friendlyName: "Tile Content",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     childRequirements: {
       message: "You can only add Button components as children",
       query: {
@@ -158,8 +160,7 @@ Builder.registerComponent(
   {
     name: "TileImage",
     friendlyName: "Tile Image",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       ...themeableInputs,
       ...opacityInputs,

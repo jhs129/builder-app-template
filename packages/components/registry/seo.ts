@@ -1,13 +1,18 @@
 import { Builder } from "@builder.io/react";
 import dynamic from "next/dynamic";
 
+// Helper function to conditionally set image property
+const getImageConfig = () => {
+  const envImage = process.env.NEXT_DEFAULT_COMPONENT_IMAGE;
+  return envImage ? { image: envImage } : {};
+};
+
 Builder.registerComponent(
   dynamic(() => import("../components/seo/EventSchemaData")),
   {
     hideFromInsertMenu: true,
     name: "EventSchemaData",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       // Required fields
       {

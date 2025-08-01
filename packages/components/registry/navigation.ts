@@ -7,12 +7,17 @@ import {
   themeableInputs,
 } from "@repo/types";
 
+// Helper function to conditionally set image property
+const getImageConfig = () => {
+  const envImage = process.env.NEXT_DEFAULT_COMPONENT_IMAGE;
+  return envImage ? { image: envImage } : {};
+};
+
 Builder.registerComponent(
   dynamic(() => import("../components/navigation/Header")),
   {
     name: "Header",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
       inputs: [
         { name: "navigation1", type: "object", friendlyName: "Primary Navigation" },
         { name: "navigation2", type: "object", friendlyName: "Secondary Navigation" },
@@ -25,8 +30,7 @@ Builder.registerComponent(
   dynamic(() => import("../components/navigation/Footer")),
   {
     name: "Footer",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
       inputs: [
         { name: "navigation", type: "object", friendlyName: "Footer Navigation" },
         { name: "socialNetworks", type: "list", subFields: [
@@ -42,7 +46,7 @@ Builder.registerComponent(
   {
     name: "VerticalNavigation",
     friendlyName: "Vertical Navigation",
-    image: process.env.NEXT_DEFAULT_COMPONENT_IMAGE || "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       ...themeableInputs,
       ...heroicInputs,

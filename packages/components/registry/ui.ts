@@ -2,13 +2,19 @@ import { Builder } from "@builder.io/react";
 import dynamic from "next/dynamic";
 import { commonInputs, standardThemes, themeableInputs, heroicInputs } from "@repo/types";
 
+// Helper function to conditionally set image property
+const getImageConfig = () => {
+  const envImage = process.env.NEXT_DEFAULT_COMPONENT_IMAGE;
+  return envImage ? { image: envImage } : {};
+};
+
 Builder.registerComponent(
   dynamic(() => import("../components/ui/Button")),
   {
     name: "Core:Button",
     hideFromInsertMenu: true,
     override: false,
-    image: "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       ...themeableInputs,
       {
@@ -55,7 +61,7 @@ Builder.registerComponent(
   {
     name: "Button",
     override: true,
-    image: "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       ...themeableInputs,
       {
@@ -101,7 +107,7 @@ Builder.registerComponent(
   dynamic(() => import("../components/ui/NotFoundContent")),
   {
     name: "NotFoundContent",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     friendlyName: "404 Content",
     inputs: [
       {
@@ -163,7 +169,7 @@ Builder.registerComponent(
   {
     name: "Accordion",
     friendlyName: "Accordion",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       ...themeableInputs,
       {
@@ -266,7 +272,7 @@ Builder.registerComponent(
   {
     name: "Alert",
     friendlyName: "Alert",
-    image: process.env.NEXT_DEFAULT_COMPONENT_IMAGE,
+    ...getImageConfig(),
     inputs: [
       {
         name: "variant",
@@ -323,7 +329,7 @@ Builder.registerComponent(
   {
     name: "DesignKitOverview",
     friendlyName: "Design Kit Overview",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Faa26d0ed43ef421da301a1603f38faeb%2F4f97f24502864d2b8a8d414115cd5b9f",
+    ...getImageConfig(),
     inputs: [
       {
         name: "theme",
@@ -344,7 +350,7 @@ Builder.registerComponent(
   dynamic(() => import("../components/ui/Headline")),
   {
     name: "Headline",
-    image: process.env.NEXT_DEFAULT_COMPONENT_IMAGE,
+    ...getImageConfig(),
     inputs: [
       ...heroicInputs,
       {
