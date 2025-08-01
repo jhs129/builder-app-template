@@ -31,11 +31,8 @@ const defaultFooterNav: Navigation = {
   data: {
     level1: [
       { text: "Terms of Service", href: "/terms" },
-      { text: "Refund Policy", href: "/refund" },
       { text: "Privacy Policy", href: "/privacy" },
       { text: "Contact Us", href: "/contact" },
-      { text: "Affiliates", href: "/affiliates" },
-      { text: "Blogs", href: "/blogs" },
     ],
   },
   ...defaultNavAttributes,
@@ -64,7 +61,7 @@ const Footer = ({
           <Link href="/" className="block">
             <div className="relative w-40 md:w-[200px] h-[60px]">
               <Image
-                src="/SMA_Logo_Light_Slim.avif"
+                src="https://placehold.co/400x100/png?text=Logo"
                 alt="The Silva Method - Atlanta & Western North Carolina"
                 width={200}
                 height={60}

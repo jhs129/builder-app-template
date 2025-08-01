@@ -34,7 +34,6 @@ const defaultPrimaryNav: Navigation = {
     level1: [
       { text: "Home", href: "/" },
       { text: "About", href: "/about" },
-      { text: "Offerings", href: "/offerings" },
       { text: "Services", href: "/services" },
     ],
   },
@@ -44,8 +43,6 @@ const defaultPrimaryNav: Navigation = {
 const defaultSecondaryNav: Navigation = {
   data: {
     level1: [
-      { text: "Podcast", href: "/podcast" },
-      { text: "Photography", href: "/photography" },
       { text: "Blog", href: "/blog" },
       { text: "Contact", href: "/contact" },
     ],
@@ -56,7 +53,7 @@ const defaultSecondaryNav: Navigation = {
 const Header = ({
   navigation1: primaryNav = defaultPrimaryNav,
   navigation2: secondaryNav = defaultSecondaryNav,
-  logo = "/SMA_Logo_Dark_Slim.avif",
+  logo = "https://placehold.co/400x100/png?text=Logo",
 }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
