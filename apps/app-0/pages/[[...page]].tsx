@@ -35,7 +35,7 @@ const shouldExcludePath = (url: string): boolean => {
   return isExcludedDirectory || isStandalonePage;
 };
 
-export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<PageProps> = async ({ params, locale }) => {
   const siteContextName = process.env.NEXT_PUBLIC_SITE_CONTEXT_NAME || "sma";
 
   if (!siteContextName) {
@@ -54,6 +54,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
         options: {
           enrich: true,
           includeRefs: true,
+          locale: locale || 'en',
         },
       })
       .toPromise();
@@ -67,6 +68,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
           enrich: true,
           includeRefs: true,
           noTargeting: true,
+          locale: locale || 'en',
         },
       })
       .toPromise();

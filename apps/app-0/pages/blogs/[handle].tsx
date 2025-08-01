@@ -16,6 +16,7 @@ import { ThemeProvider } from "@repo/components";
 import { TileCTA } from "@repo/components";
 import { ArticleSchemaData } from "@repo/components";
 import { articleToSchemaData } from "@repo/components";
+import { useRouter } from "next/router";
 
 interface BlogPageProps {
   article: any;
@@ -24,6 +25,7 @@ interface BlogPageProps {
 
 export const getStaticProps: GetStaticProps<BlogPageProps> = async ({
   params,
+  locale,
 }) => {
   const handle = params?.handle as string;
 
@@ -36,6 +38,7 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async ({
         options: {
           enrich: true,
           includeRefs: true,
+          locale: locale || 'en',
         },
       })
       .toPromise(),
@@ -47,6 +50,7 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async ({
         options: {
           enrich: true,
           includeRefs: true,
+          locale: locale || 'en',
         },
       })
       .toPromise(),
@@ -87,6 +91,7 @@ const formatDate = (timestamp: number) => {
 
 const BlogPage: React.FC<BlogPageProps> = ({ article, siteContext }) => {
   const isPreviewing = useIsPreviewing();
+  const router = useRouter();
 
   if (!article && !isPreviewing) {
     return <Custom404 />;
@@ -163,6 +168,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ article, siteContext }) => {
                       content={fullContent}
                       options={{
                         enrich: true,
+                        locale: router.locale,
                       }}
                     />
                   </article>
